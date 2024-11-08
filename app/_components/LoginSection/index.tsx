@@ -11,35 +11,25 @@ const LoginSection: React.FC = () => {
     return (
         <section className="bg-primary">
             <div className="container mx-auto">
-                <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-24">
+                <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-16">
 
-
-
-                    <div className="flex flex-col w-full text-center items-center justify-center p-10">
-
-                        <Typography  className="text-2xl text-white mb-4">
+                    <div className="flex flex-col w-full justify-center text-center">
+                        <Typography className="text-3xl font-bold text-gray-200 mb-10">
+                            Projeto de Adesão ao <br></br>Mercado Livre de Energia
+                        </Typography>
+                        <Typography className="text-2xl text-white mb-10">
                             Faça parte dessa revolução energética!
                         </Typography>
-                        <Typography className="text-2xl text-white mb-4">
-                            Descubra neste projeto experimental como o Mercado Livre de Energia pode transformar sua conta de energia.
-                        </Typography>
-
-                        <Typography className="text-2xl text-secondary">
+                        <Typography className="text-2xl text-secondary  mb-10">
                             Desfrute da liberdade de escolher seu fornecedor de energia com possibilidade de reduzir seus custos com energia.
                         </Typography>
                     </div>
 
+
                     <div className="flex flex-col bg-gray-100 shadow-sm border border-slate-200 rounded-lg w-full my-12">
-                        <div className="grid text-center items-center py-16">
-
-                            <Typography className="text-3xl font-bold text-black mb-4">
-                                Sistema de Adesão ao Projeto <br></br>Mercado Livre de Energia
-                            </Typography>
-
-
-
+                        <div className="grid text-center items-center py-10">
                             <form action="#" className="mx-auto max-w-[24rem] text-left">
-                                <div className="my-4">
+                                <div className="">
                                     <label htmlFor="numero_uc">
                                         <Typography
                                             variant="small"

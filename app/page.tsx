@@ -1,19 +1,17 @@
 "use client";
 
-import { useState, useEffect } from "react";
 import { generateClient } from "aws-amplify/data";
 
 
 import type { Schema } from "@/amplify/data/resource";
-import "./../app/app.css";
-import { Amplify } from "aws-amplify";
 import outputs from "@/amplify_outputs.json";
 import "@aws-amplify/ui-react/styles.css";
-import { ThemeProvider } from "@material-tailwind/react";
-import { NavbarSimple } from "./_components/Header";
-import { AccordionCustomIcon } from "./_components/Accordion";
-import LoginSection from "./_components/LoginSection";
+import { Amplify } from "aws-amplify";
+import "./../app/app.css";
+import { Beneficios } from "./_components/Beneficios";
 import { DuvidasSection } from "./_components/DuvidasSection";
+import LoginSection from "./_components/LoginSection";
+import OProjeto from "./_components/OProjeto";
 
 Amplify.configure(outputs);
 
@@ -24,8 +22,15 @@ export default function App() {
 
   return (
     <>
-       <LoginSection />
-       <DuvidasSection />
+      <LoginSection />
+
+      <OProjeto />
+
+      <Beneficios />
+
+      <DuvidasSection />
+
+      
 
     </>
 
