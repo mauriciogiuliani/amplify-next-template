@@ -10,14 +10,14 @@ const LoginSection: React.FC = () => {
 
     return (
         <section className="bg-primary container px-4 2xl:px-32 py-6 lg:pb-24 max-w-full">
-            <div className="grid gap-6 2xl:gap-24 lg:grid-cols-2 items-center w-full ">
+            <div className="grid gap-2 2xl:gap-24 lg:grid-cols-2 items-center w-full ">
 
                 <div className="space-y-4 mx-2 ">
                     <Typography variant="h1" className="text-3xl font-bold tracking-tighter text-white sm:text-5xl xl:text-6xl/none text-center lg:text-start">
                         Projeto de Adesão ao Mercado Livre de Energia
                     </Typography>
 
-                    <Typography variant="paragraph" className="text-secondary text-xl ">
+                    <Typography variant="paragraph" className="text-secondary text-xl  text-center lg:text-start">
                         Descubra como o mercado livre pode transformar sua conta de energia e desfrute da liberdade de escolher seu fornecedor com a possibilidade de reduzir seus custos com energia
                     </Typography>
                 </div>
@@ -25,7 +25,7 @@ const LoginSection: React.FC = () => {
 
                 <div className="mx-2 ">
                     <div className="flex flex-col bg-gray-100 shadow-sm border border-slate-200 rounded-lg w-full my-8  ">
-                        <div className="grid text-center items-center py-10">
+                        <div className="grid text-center items-center px-4 py-10">
                             <form action="#" className="mx-auto max-w-[24rem] text-left">
                                 <div className="">
                                     <Typography variant="paragraph" className="text-xl text-primary md:text-xl mb-8">

@@ -46,12 +46,11 @@ const testimonials = [
 
 export function OProjeto() {
     return (
-        <section className="px-8 py-10 lg:py-32">
+        <section className="px-8 py-12 lg:py-32">
             <div className="container mx-auto">
                 <Typography
                     variant="h2"
-                    color="blue-gray"
-                    className="mb-4 !text-2xl lg:!text-4xl"
+                    className="mb-4 !text-2xl lg:!text-4xl text-primary"
                 >
                     O Projeto
                 </Typography>
@@ -63,13 +62,13 @@ export function OProjeto() {
                 </Typography>
 
                 <Typography
-                    variant="lead"
-                    className="max-w text-gray-500 text-center my-12"
+                    variant="h4"
+                    className="max-w text-primary py-6 xl:py-12 font-light text-center xl:text-start"
                 >
-                    Sua tarifa de energia é composta de:
+                    Na sua conta de luz, existem duas partes principais.
                 </Typography>
 
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 xl:gap-16">
                     <Card className=" bg-gray-100/50 text-center rounded-2xl p-6" shadow={false}>
                         <CardHeader className="text-primary"
                             color="transparent"
@@ -77,49 +76,65 @@ export function OProjeto() {
                             shadow={false}
                         >
                             <Typography className="mb-2 !text-2xl lg:!text-3xl max-w-4xl !leading-snug mx-auto font-bold">
-                                TUSD
-                            </Typography>
-                            <Typography variant="paragraph" className="text-gray-700">
                                 Tarifa de Uso do Sistema de Distribuição
+
+                            </Typography>
+                            <Typography variant="lead" className="text-gray-700">
+                                TUSD
                             </Typography>
                         </CardHeader>
 
                         <CardBody className="space-y-2">
                             <Typography variant="paragraph" className="text-gray-700 text-lg" >
-                                Custos de transporte da energia da geração até seu medidor
-                            </Typography>
-                            <Typography variant="paragraph" className="text-gray-700 text-lg">
-                                Encargos setoriais legais
+                                Esta é a parte da tarifa que cobre os custos de transporte da energia até sua casa, além de encargos obrigatórios.
                             </Typography>
                         </CardBody>
                     </Card>
 
 
                     <Card className="bg-gray-100/50 text-center rounded-2xl p-6" shadow={false}>
-                        <CardHeader className="text-primary"
+                        <CardHeader className="text-primary r"
                             color="transparent"
                             floated={false}
                             shadow={false}
                         >
-                            <Typography className="mb-2 !text-2xl lg:!text-3xl max-w-4xl !leading-snug mx-auto font-bold">
-                                TE
-                            </Typography>
-                            <Typography variant="paragraph" className="text-gray-700">
+                            <Typography className="mb-2 !text-2xl lg:!text-3xl max-w-4xl !leading-snug mx-auto font-bold ">
                                 Tarifa de Energia
+                            </Typography>
+                            <Typography variant="lead" className="text-gray-700 ">
+                                TE
                             </Typography>
                         </CardHeader>
 
                         <CardBody className="space-y-2">
-                            <Typography variant="paragraph" className="text-gray-700 text-lg" >
-                                Custos da geração de energia
-                            </Typography>
                             <Typography variant="paragraph" className="text-gray-700 text-lg">
-                            Esta é a parte da tarifa que você pode mudar no projeto, escolhendo entre diferentes planos
+                                É essa parte da tarifa que você pode mudar no projeto, escolhendo entre diferentes planos. Ela cobre os custos da <b>geração de energia</b>.
                             </Typography>
                         </CardBody>
                     </Card>
                 </div>
 
+                <Typography
+                    variant="paragraph"
+                    className="max-w !text-gray-500 py-6 lg:py-12"
+                >
+                    Diferente das tarifas fixadas pela ANEEL (que regula o setor), a tarifa de energia no mercado livre é baseada nas condições atuais do mercado, podendo variar.
+                    O projeto vai durar 12 meses e será uma simulação para um grupo de consumidores, permitindo que você entenda melhor como funciona sua conta de energia e como poderia ser a transição para o mercado livre no futuro.
+                    Você pode participar de forma voluntária e aproveitar essa oportunidade de conhecer e escolher o tipo de energia que vai usar.
+                </Typography>
+
+                <Card className="bg-gray-100/50 text-center  rounded-2xl p-6" shadow={false}>
+                    <CardHeader className="text-primary r"
+                        color="transparent"
+                        floated={false}
+                        shadow={false}
+                    >
+                        <Typography className="mb-2 !text-2xl lg:!text-3xl max-w-4xl !leading-snug mx-auto font-bold ">
+                        Junte-se a nós e explore a liberdade de escolha no mercado de energia!
+                        </Typography>
+                        
+                    </CardHeader>
+                </Card>
 
             </div>
         </section>
