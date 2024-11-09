@@ -28,7 +28,7 @@ const LoginSection: React.FC = () => {
                         <div className="grid text-center items-center px-4 py-10">
                             <form action="#" className="mx-auto max-w-[24rem] text-left">
                                 <div className="">
-                                    <Typography variant="paragraph" className="text-xl text-primary md:text-xl mb-8">
+                                    <Typography variant="paragraph" className="text-xl text-primary md:text-xl mb-8 text-center">
                                         Faça parte dessa revolução energética!
                                     </Typography>
                                     <label htmlFor="numero_uc">
