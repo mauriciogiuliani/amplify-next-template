@@ -14,21 +14,30 @@ function NavList() {
   return (
     <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       <a href="#buttons-with-link">
-        <Button className="bg-secondary text-black min-w-[10rem]">
+        <Typography className="text-white font-bold tracking-wide m-r-4">
           O PROJETO
-        </Button>
+        </Typography>
+        
       </a>
       <a href="#buttons-with-link">
-        <Button className="bg-secondary text-black min-w-[10rem]">
-          BENEFÍCIOS
-        </Button>
+        <Typography className="text-white font-bold tracking-wide m-r-4">
+          BENEFICIOS
+        </Typography>
+        
       </a>
       <a href="#buttons-with-link">
-        <Button className="bg-secondary text-black min-w-[10rem]">
-        DÚVIDAS
-        </Button>
+        <Typography className="text-white font-bold tracking-wide m-r-4">
+          DUVIDAS
+        </Typography>
+        
       </a>
-
+      
+      <a href="#buttons-with-link">
+        <Typography className="text-white font-bold tracking-wide">
+          FALE CONOSCO
+        </Typography>
+        
+      </a>
     </ul>
   );
 }
@@ -50,12 +59,12 @@ export function NavbarSimple() {
   return (
 
 
-    <Navbar className="bg-primary px-6 py-12"
+    <Navbar className="bg-primary xl:py-6 "
       shadow={false}
       fullWidth={true}
       blurred={false}
     >
-      <div className="container mx-auto flex items-center justify-end text-blue-gray-100">
+      <div className="flex items-center justify-end text-blue-gray-100 px-2 lg:px-16">
 
         <div className="hidden lg:block">
           <NavList />

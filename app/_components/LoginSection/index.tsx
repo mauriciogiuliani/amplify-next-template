@@ -9,27 +9,28 @@ const LoginSection: React.FC = () => {
     const togglePasswordVisiblity = () => setPasswordShown((cur) => !cur);
 
     return (
-        <section className="bg-primary">
-            <div className="container mx-auto">
-                <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-16">
+        <section className="bg-primary container px-4 2xl:px-32 py-6 lg:pb-24 max-w-full">
+            <div className="grid gap-6 2xl:gap-24 lg:grid-cols-2 items-center w-full ">
 
-                    <div className="flex flex-col w-full justify-center text-center">
-                        <Typography className="text-3xl font-bold text-gray-200 mb-10">
-                            Projeto de Adesão ao <br></br>Mercado Livre de Energia
-                        </Typography>
-                        <Typography className="text-2xl text-white mb-10">
-                            Faça parte dessa revolução energética!
-                        </Typography>
-                        <Typography className="text-2xl text-secondary  mb-10">
-                            Desfrute da liberdade de escolher seu fornecedor de energia com possibilidade de reduzir seus custos com energia.
-                        </Typography>
-                    </div>
+                <div className="space-y-4 mx-2 ">
+                    <Typography variant="h1" className="text-3xl font-bold tracking-tighter text-white sm:text-5xl xl:text-6xl/none text-center lg:text-start">
+                        Projeto de Adesão ao Mercado Livre de Energia
+                    </Typography>
+
+                    <Typography variant="paragraph" className="text-secondary text-xl ">
+                        Descubra como o mercado livre pode transformar sua conta de energia e desfrute da liberdade de escolher seu fornecedor com a possibilidade de reduzir seus custos com energia
+                    </Typography>
+                </div>
 
 
-                    <div className="flex flex-col bg-gray-100 shadow-sm border border-slate-200 rounded-lg w-full my-12">
+                <div className="mx-2 ">
+                    <div className="flex flex-col bg-gray-100 shadow-sm border border-slate-200 rounded-lg w-full my-8  ">
                         <div className="grid text-center items-center py-10">
                             <form action="#" className="mx-auto max-w-[24rem] text-left">
                                 <div className="">
+                                    <Typography variant="paragraph" className="text-xl text-primary md:text-xl mb-8">
+                                        Faça parte dessa revolução energética!
+                                    </Typography>
                                     <label htmlFor="numero_uc">
                                         <Typography
                                             variant="small"

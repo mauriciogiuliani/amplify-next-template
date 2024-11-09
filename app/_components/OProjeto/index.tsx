@@ -46,7 +46,7 @@ const testimonials = [
 
 export function OProjeto() {
     return (
-        <section className="px-8 py-10 lg:py-28">
+        <section className="px-8 py-10 lg:py-32">
             <div className="container mx-auto">
                 <Typography
                     variant="h2"
@@ -55,71 +55,72 @@ export function OProjeto() {
                 >
                     O Projeto
                 </Typography>
-                {/* <Typography
-                    variant="lead"
-                    className="max-w !text-gray-500 mb-6"
-                >
-                    Descubra como o mercado livre pode transformar sua conta de energia
-                </Typography> */}
-
                 <Typography
                     variant="paragraph"
-                    className="max-w !text-gray-500 mb-6"
+                    className="max-w !text-gray-500"
                 >
-                   O Projeto Experimental Abertura de Mercado foi criado para que você possa experimentar como funciona o Mercado Livre de Energia, ainda com a supervisão da distribuidora. Isso significa que você terá a chance de escolher entre diferentes opções de energia, como acontece no mercado livre, mas de forma simulada e segura.
+                    O Projeto Experimental Abertura de Mercado foi criado para que você possa experimentar como funciona o Mercado Livre de Energia, ainda com a supervisão da distribuidora. Isso significa que você terá a chance de escolher entre diferentes opções de energia, como acontece no mercado livre, mas de forma simulada e segura.
                 </Typography>
 
                 <Typography
                     variant="lead"
-                    className="max-w !text-gray-500 mb-6 text-center"
+                    className="max-w text-gray-500 text-center my-12"
                 >
-                   Na sua conta de luz, existem duas partes principais
+                    Sua tarifa de energia é composta de:
                 </Typography>
 
-                <Card
-                    shadow={false}
-                    className="mt-8 bg-gray-100/50 text-center rounded-2xl p-6"
-                >
-                    <CardHeader className="text-primary"
-                        color="transparent"
-                        floated={false}
-                        shadow={false}
-                    >
-                        <Typography
-                            className="mb-4 !text-2xl lg:!text-3xl max-w-4xl !leading-snug mx-auto font-bold "
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    <Card className=" bg-gray-100/50 text-center rounded-2xl p-6" shadow={false}>
+                        <CardHeader className="text-primary"
+                            color="transparent"
+                            floated={false}
+                            shadow={false}
                         >
-                            Junte-se a nós nesse projeto! 
-                            <br></br> 
-                            Participe e aproveite a liberdade de escolha no mercado de energia.
-                        </Typography>
+                            <Typography className="mb-2 !text-2xl lg:!text-3xl max-w-4xl !leading-snug mx-auto font-bold">
+                                TUSD
+                            </Typography>
+                            <Typography variant="paragraph" className="text-gray-700">
+                                Tarifa de Uso do Sistema de Distribuição
+                            </Typography>
+                        </CardHeader>
+
+                        <CardBody className="space-y-2">
+                            <Typography variant="paragraph" className="text-gray-700 text-lg" >
+                                Custos de transporte da energia da geração até seu medidor
+                            </Typography>
+                            <Typography variant="paragraph" className="text-gray-700 text-lg">
+                                Encargos setoriais legais
+                            </Typography>
+                        </CardBody>
+                    </Card>
 
 
-
-                    </CardHeader>
-                </Card>
-
-
-                <Card
-                    shadow={false}
-                    className="mt-8 bg-gray-100/50 text-center rounded-2xl p-6"
-                >
-                    <CardHeader className="text-primary"
-                        color="transparent"
-                        floated={false}
-                        shadow={false}
-                    >
-                        <Typography
-                            className="mb-4 !text-2xl lg:!text-3xl max-w-4xl !leading-snug mx-auto font-bold "
+                    <Card className="bg-gray-100/50 text-center rounded-2xl p-6" shadow={false}>
+                        <CardHeader className="text-primary"
+                            color="transparent"
+                            floated={false}
+                            shadow={false}
                         >
-                            Junte-se a nós nesse projeto! 
-                            <br></br> 
-                            Participe e aproveite a liberdade de escolha no mercado de energia.
-                        </Typography>
+                            <Typography className="mb-2 !text-2xl lg:!text-3xl max-w-4xl !leading-snug mx-auto font-bold">
+                                TE
+                            </Typography>
+                            <Typography variant="paragraph" className="text-gray-700">
+                                Tarifa de Energia
+                            </Typography>
+                        </CardHeader>
+
+                        <CardBody className="space-y-2">
+                            <Typography variant="paragraph" className="text-gray-700 text-lg" >
+                                Custos da geração de energia
+                            </Typography>
+                            <Typography variant="paragraph" className="text-gray-700 text-lg">
+                            Esta é a parte da tarifa que você pode mudar no projeto, escolhendo entre diferentes planos
+                            </Typography>
+                        </CardBody>
+                    </Card>
+                </div>
 
 
-
-                    </CardHeader>
-                </Card>
             </div>
         </section>
     );
