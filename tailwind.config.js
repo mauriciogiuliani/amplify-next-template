@@ -14,7 +14,7 @@ module.exports = withMT({
         'primary': '#32665a',
         'secondary': '#a5d446',
         'white': '#ffffff',
-        'black': '#252831',
+        'black': '#474747',
         "stone-50": "#f3f4f6",
         "emerald-800": "#065f46"
 

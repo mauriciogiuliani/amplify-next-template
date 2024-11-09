@@ -12,6 +12,7 @@ import { Beneficios } from "./_components/Beneficios";
 import { DuvidasSection } from "./_components/DuvidasSection";
 import LoginSection from "./_components/LoginSection";
 import OProjeto from "./_components/OProjeto";
+import { SimpleFooter } from "./_components/Footer";
 
 Amplify.configure(outputs);
 
@@ -29,6 +30,8 @@ export default function App() {
       <Beneficios />
 
       <DuvidasSection />
+
+      <SimpleFooter />
 
       
 
