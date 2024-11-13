@@ -65,7 +65,7 @@ export function OProjeto() {
                     variant="h4"
                     className="max-w text-primary py-6 xl:py-12 font-light text-center xl:text-start"
                 >
-                    Na sua conta de luz, existem duas partes principais.
+                    Na sua conta de luz, existem duas partes principais
                 </Typography>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 xl:gap-16">
@@ -124,7 +124,7 @@ export function OProjeto() {
                 </Typography>
 
                 <Card className="bg-gray-100/50 text-center  rounded-2xl p-6" shadow={false}>
-                    <CardHeader className="text-primary r"
+                    <CardHeader className="text-primary"
                         color="transparent"
                         floated={false}
                         shadow={false}

@@ -10,13 +10,15 @@ module.exports = withMT({
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Helvetica', 'Arial', 'sans-serif'], // Add Helvetica as the primary font
+      },
       colors: {
-        'primary': '#32665a',
-        'secondary': '#a5d446',
-        'white': '#ffffff',
-        'black': '#474747',
-        "stone-50": "#f3f4f6",
-        "emerald-800": "#065f46"
+        'primary': '#36655B',
+        'secondary': '#A6D447',
+        'tertiary': "#CBCDC9",
+        'white': '#FFFFFF',
+        'black': '#252731',
 
       }
     }

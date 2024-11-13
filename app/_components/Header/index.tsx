@@ -8,35 +8,38 @@ import {
   IconButton,
   Button,
 } from "@material-tailwind/react";
+
+import sipam from "@/images/sipam_logo.png";
+
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
 function NavList() {
   return (
     <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       <a href="#buttons-with-link">
-        <Typography className="text-white font-bold tracking-wide m-r-4">
+        <Typography className="text-primary font-bold tracking-wide m-r-4 ">
           O PROJETO
         </Typography>
-        
+
       </a>
       <a href="#buttons-with-link">
-        <Typography className="text-white font-bold tracking-wide m-r-4">
+        <Typography className="text-primary font-bold tracking-wide m-r-4">
           BENEFICIOS
         </Typography>
-        
+
       </a>
       <a href="#buttons-with-link">
-        <Typography className="text-white font-bold tracking-wide m-r-4">
+        <Typography className="text-primary font-bold tracking-wide m-r-4">
           DUVIDAS
         </Typography>
-        
+
       </a>
-      
+
       <a href="#buttons-with-link">
-        <Typography className="text-white font-bold tracking-wide">
+        <Typography className="text-primary font-bold tracking-wide">
           FALE CONOSCO
         </Typography>
-        
+
       </a>
     </ul>
   );
@@ -59,20 +62,19 @@ export function NavbarSimple() {
   return (
 
 
-    <Navbar className="bg-primary xl:py-6 "
-      shadow={false}
-      fullWidth={true}
-      blurred={false}
+    <Navbar className=""
+      fullWidth
     >
-      <div className="flex items-center justify-end text-blue-gray-100 px-2 lg:px-16">
+      <div className="flex items-center justify-between text-blue-gray-100 px-2 lg:px-16">
 
+        <img src={sipam.src} alt="" className="h-14 lg:h-20" />
         <div className="hidden lg:block">
           <NavList />
         </div>
 
         <IconButton
           variant="text"
-          className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
+          className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden text-primary"
           ripple={false}
           onClick={() => setOpenNav(!openNav)}
         >

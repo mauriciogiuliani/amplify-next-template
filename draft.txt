@@ -1,0 +1,30 @@
+tabelas
+    permissionaria
+    vendedor
+    subgrupo 
+
+    grupo:
+    - id
+    - nome
+    - comunicacao
+    - fidelidade
+    - 
+
+    produto
+    - id
+    - nome
+    - descricao
+    - preco_unico
+    - preco_patamar_pesado
+    - preco_patamar_leve
+    - multa
+    - vendedor_id
+
+    consumidor
+    - id
+    - permissionaria_id
+    - grupo_id
+    - subgrupo_id
+    - num_uc
+    - chave
+

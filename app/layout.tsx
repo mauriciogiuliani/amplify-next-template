@@ -21,7 +21,7 @@ export default function RootLayout({
 
     <html lang="en">
       <body>
-        <header>
+        <header className=" sticky top-0  bg-white opacity-100 z-10">
           <NavbarSimple />
         </header>
 

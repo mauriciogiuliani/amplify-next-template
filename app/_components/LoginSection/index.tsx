@@ -9,7 +9,7 @@ const LoginSection: React.FC = () => {
     const togglePasswordVisiblity = () => setPasswordShown((cur) => !cur);
 
     return (
-        <section className="bg-primary container px-4 2xl:px-32 py-6 lg:pb-24 max-w-full">
+        <section className="bg-primary container px-4 2xl:px-32 py-6 lg:py-24 max-w-full">
             <div className="grid gap-2 2xl:gap-24 lg:grid-cols-2 items-center w-full ">
 
                 <div className="space-y-4 mx-2 ">
@@ -26,11 +26,14 @@ const LoginSection: React.FC = () => {
                 <div className="mx-2 ">
                     <div className="flex flex-col bg-gray-100 shadow-sm border border-slate-200 rounded-lg w-full my-8  ">
                         <div className="grid text-center items-center px-4 py-10">
+                            
+                            
                             <form action="#" className="mx-auto max-w-[24rem] text-left">
-                                <div className="">
+                                <div className="mb-4">
                                     <Typography variant="paragraph" className="text-xl text-primary md:text-xl mb-8 text-center">
                                         Faça parte dessa revolução energética!
                                     </Typography>
+                            
                                     <label htmlFor="numero_uc">
                                         <Typography
                                             variant="small"
@@ -38,20 +41,21 @@ const LoginSection: React.FC = () => {
                                             Número da UC
                                         </Typography>
                                     </label>
+                            
                                     <Input
                                         id="numero_uc"
                                         name="numero_uc"
                                         size="lg"
-
+                                        crossOrigin={"anonymous"}
                                         labelProps={{
                                             className: "hidden",
-                                        }}
-                                        crossOrigin={"anonymous"}
+                                          }}
+                                           className="focus:border-t-black"
 
                                     />
                                 </div>
                                 <div className="mb-4">
-                                    <div className="w-72">
+                                    <div className="">
                                         <label htmlFor="cooperativa_select">
                                             <Typography
                                                 variant="small"
@@ -62,12 +66,15 @@ const LoginSection: React.FC = () => {
                                         </label>
 
                                         <Select id="cooperativa_select"
-                                            size="lg">
-                                            <Option>Material Tailwind HTML</Option>
-                                            <Option>Material Tailwind React</Option>
-                                            <Option>Material Tailwind Vue</Option>
-                                            <Option>Material Tailwind Angular</Option>
-                                            <Option>Material Tailwind Svelte</Option>
+                                            size="lg"
+                                            labelProps={{
+                                                className: "hidden",
+                                            }}
+                                            className="border-t-blue-gray-200 focus:border-t-black">
+                                            <Option>CERBRANORTE</Option>
+                                            <Option>CERTAJA</Option>
+                                            <Option>CERTEL</Option>
+                                            <Option>COPREL</Option>
                                         </Select>
                                     </div>
                                 </div>
