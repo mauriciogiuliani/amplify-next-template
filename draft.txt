@@ -1,14 +1,24 @@
 tabelas
     permissionaria
+    - id
+    - nome
+
     vendedor
-    subgrupo 
+    - id
+    - nome
+
+    subgrupo
+    - id
+    - nome 
 
     grupo:
     - id
     - nome
     - comunicacao
     - fidelidade
-    - 
+    - periodo_teste
+    - vizinhanca
+    - produtos 
 
     produto
     - id

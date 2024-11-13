@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.whatsapp_icon {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    
+    
+
+}

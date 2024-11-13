@@ -14,7 +14,7 @@ export function SimpleFooter() {
 
   return (
     <footer 
-    className="flex w-full flex-row flex-wrap items-center justify-center gap-y-6 gap-x-12 border-t border-blue-gray-50 py-6 text-center md:justify-center bg-primary md:px-12">
+    className="flex w-full flex-col flex-wrap items-center justify-center gap-y-6 gap-x-12 border-t border-blue-gray-50 py-6 text-center md:justify-center bg-primary md:px-12">
       
 
     <Image src={certaja.src} alt={""} width={150} height={250} />
