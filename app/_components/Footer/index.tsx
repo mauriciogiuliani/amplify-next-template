@@ -2,42 +2,39 @@ import { Typography } from "@material-tailwind/react";
 
 import Image from 'next/image';
 
-import certaja from "@/images/CERTAJA.png";
-import cebranorte from "@/images/CERBRANORTE.png";
-import certel from "@/images/CERTEL.png";
-import coprel from "@/images/coprel.svg";
+import infracoop_logo from "@/images/logo/infracoop.jpg";
+import certaja_logo from "@/images/logo/certaja.jpg"
+import cebranorte_logo from "@/images/logo/cerbranorte.jpg";
+import certel_logo from "@/images/logo/certel.jpg";
+import coprel_logo from "@/images/logo/coprel.jpg";
 
+
+import aneel_logo from "@/images/logo/aneel.jpg";
 
 export function SimpleFooter() {
 
 
 
   return (
-    <footer 
-    className="flex w-full flex-col flex-wrap items-center justify-center gap-y-6 gap-x-12 border-t border-blue-gray-50 py-6 text-center md:justify-center bg-primary md:px-12">
-      
+    <>
 
-    <Image src={certaja.src} alt={""} width={150} height={250} />
+      <div className="flex justify-center">
+        <img src={aneel_logo.src} alt={""} className="h-32" />
+      </div>
 
-    <Image src={cebranorte.src} alt={""} width={150} height={250} />
+      <div className="flex flex-col lg:flex-row  items-center space-x-6">
+        <img src={infracoop_logo.src} alt={""} className="h-12 mb-4" />
 
-    <Image src={certel.src} alt={""} width={150} height={250} />
+        <img src={certaja_logo.src} alt={""} className="h-12 mb-4" />
 
-    <Image src={coprel.src} alt={""} width={150} height={250} />
+        <img src={cebranorte_logo.src} alt={""} className="h-20" />
 
-      
-      
-      {/* <ul className="flex flex-wrap items-center gap-y-2 gap-x-8">
-        <li>
-          <Typography
-            as="a"
-            href="#"
-            className="transition-colors text-white hover:text-secondary focus:text-secondary font-normal tracking-wide "
-          >
-            
-          </Typography>
-        </li>
-      </ul> */}
-    </footer>
+        <img src={certel_logo.src} alt={""} className="h-12 mb-4" />
+
+        <img src={coprel_logo.src} alt={""} className="h-12 mb-4" />
+
+      </div>
+
+    </>
   );
 }

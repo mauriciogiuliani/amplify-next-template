@@ -10,6 +10,7 @@ import {
 } from "@material-tailwind/react";
 
 import sipam from "@/images/sipam_logo.png";
+import sipam_v2 from "@/images/logo/sipam_v2.jpg";
 
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 
@@ -30,7 +31,7 @@ function NavList() {
       </a>
       <a href="#buttons-with-link">
         <Typography className="text-primary font-bold tracking-wide m-r-4">
-          DUVIDAS
+          DUVIDAS FREQUENTES
         </Typography>
 
       </a>
@@ -67,7 +68,7 @@ export function NavbarSimple() {
     >
       <div className="flex items-center justify-between text-blue-gray-100 px-2 lg:px-16">
 
-        <img src={sipam.src} alt="" className="h-14 lg:h-20" />
+        <img src={sipam_v2.src} alt="" className="h-14 lg:h-18" />
         <div className="hidden lg:block">
           <NavList />
         </div>

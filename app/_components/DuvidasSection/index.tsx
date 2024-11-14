@@ -1,6 +1,7 @@
 import { Accordion, AccordionBody, AccordionHeader, Typography } from "@material-tailwind/react";
 import { AccordionCustomIcon } from "../Accordion";
 import { useState } from "react";
+import icon_duvidas from "@/images/icons/duvidas.png";
 
 
 function Icon(id: any, open: any) {
@@ -26,12 +27,21 @@ export function DuvidasSection() {
         <section className="bg-white px-8 py-12 lg:py-32">
 
             <div className="container mx-auto ">
-                <Typography
-                    variant="h2"
-                    className="mb-4 !text-2xl lg:!text-4xl text-primary"
-                >
-                    Dúvidas Frequentes
-                </Typography>
+
+                <div className="flex items-center">
+
+
+                    <Typography
+                        variant="h2"
+                        className="mb-4 !text-2xl lg:!text-4xl text-primary"
+                    >
+                        Dúvidas Frequentes
+                    </Typography>
+
+                    <img src={icon_duvidas.src} className="h-12 lg:h-12 ml-2 mb-4 "/>
+                </div>
+
+
 
                 <Accordion open={open === 1} icon={<Icon id={1} open={open} />}>
                     <AccordionHeader

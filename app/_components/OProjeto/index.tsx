@@ -3,8 +3,12 @@ import {
     CardBody,
     Typography,
     CardHeader,
+    IconButton,
 } from "@material-tailwind/react";
 
+import tarifa_sistema_de_distribuicao from "@/images/icons/tarifa_sistema_de_distribuicao.png"
+import icon_tarifa_de_energia from "@/images/icons/tarifa_de_energia.png"
+import icon_lampadas from "@/images/icons/lampadas.png"
 interface TestimonialCardPropsType {
 
     title: string;
@@ -46,8 +50,13 @@ const testimonials = [
 
 export function OProjeto() {
     return (
-        <section className="px-8 py-12 lg:py-32">
+        <section className="px-8 py-12 lg:py-24">
             <div className="container mx-auto">
+
+                {/* <div className="flex justify-center mb-8 h-10 lg:h-14">
+                    <img src={icon_lampadas.src} />
+                </div> */}
+
                 <Typography
                     variant="h2"
                     className="mb-4 !text-2xl lg:!text-4xl text-primary"
@@ -69,22 +78,25 @@ export function OProjeto() {
                 </Typography>
 
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 xl:gap-16">
-                    <Card className=" bg-gray-100/50 text-center rounded-2xl p-6" shadow={false}>
-                        <CardHeader className="text-primary"
+                    <Card className=" bg-gray-100/50 text-center rounded-2xl p-6 flex " shadow={false}>
+                        <CardHeader className="text-primary flex flex-col items-center"
                             color="transparent"
                             floated={false}
                             shadow={false}
                         >
+                            <img src={tarifa_sistema_de_distribuicao.src}
+                                className="mb-4 h-14"
+                            />
                             <Typography className="mb-2 !text-2xl lg:!text-3xl max-w-4xl !leading-snug mx-auto font-bold">
                                 Tarifa de Uso do Sistema de Distribuição
 
                             </Typography>
-                            <Typography variant="lead" className="text-gray-700">
+                            {/* <Typography variant="lead" className="text-gray-700">
                                 TUSD
-                            </Typography>
+                            </Typography> */}
                         </CardHeader>
 
-                        <CardBody className="space-y-2">
+                        <CardBody >
                             <Typography variant="paragraph" className="text-gray-700 text-lg" >
                                 Esta é a parte da tarifa que cobre os custos de transporte da energia até sua casa, além de encargos obrigatórios.
                             </Typography>
@@ -93,20 +105,23 @@ export function OProjeto() {
 
 
                     <Card className="bg-gray-100/50 text-center rounded-2xl p-6" shadow={false}>
-                        <CardHeader className="text-primary r"
+                        <CardHeader className="text-primary flex flex-col items-center"
                             color="transparent"
                             floated={false}
                             shadow={false}
                         >
+
+                            <img src={icon_tarifa_de_energia.src}
+                                className="mb-4 h-14"
+                            />
+
                             <Typography className="mb-2 !text-2xl lg:!text-3xl max-w-4xl !leading-snug mx-auto font-bold ">
                                 Tarifa de Energia
                             </Typography>
-                            <Typography variant="lead" className="text-gray-700 ">
-                                TE
-                            </Typography>
+
                         </CardHeader>
 
-                        <CardBody className="space-y-2">
+                        <CardBody >
                             <Typography variant="paragraph" className="text-gray-700 text-lg">
                                 É essa parte da tarifa que você pode mudar no projeto, escolhendo entre diferentes planos. Ela cobre os custos da <b>geração de energia</b>.
                             </Typography>
@@ -130,9 +145,9 @@ export function OProjeto() {
                         shadow={false}
                     >
                         <Typography className="mb-2 !text-2xl lg:!text-3xl max-w-4xl !leading-snug mx-auto font-bold ">
-                        Junte-se a nós e explore a liberdade de escolha no mercado de energia!
+                            Junte-se a nós e explore a liberdade de escolha no mercado de energia!
                         </Typography>
-                        
+
                     </CardHeader>
                 </Card>
 

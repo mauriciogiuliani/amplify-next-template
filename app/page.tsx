@@ -15,6 +15,7 @@ import OProjeto from "./_components/OProjeto";
 import { SimpleFooter } from "./_components/Footer";
 
 import whatsapp_icon from "@/images/whatsapp.png";
+import { FaleConosco } from "./_components/FaleConosco";
 
 Amplify.configure(outputs);
 
@@ -33,10 +34,11 @@ export default function App() {
 
       <DuvidasSection />
 
-      <SimpleFooter />
-
-      <img src={whatsapp_icon.src} className="whatsapp_icon h-12 lg:h-14 m-6 lg:m-8"/>
+      <FaleConosco />
       
+
+      <img src={whatsapp_icon.src} className="whatsapp_icon h-12 lg:h-14 m-6 lg:m-8" />
+
 
     </>
 
