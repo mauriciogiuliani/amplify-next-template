@@ -31,7 +31,7 @@
     color: #ffffff;
     /* Any additional styling for the form and text */
 }
-
+/* 
 
 .hero-image::before {
     content: "";
@@ -55,4 +55,4 @@
     .hero-image::before {
         height: calc(100% - 6.25rem);
     }
-}
+} */

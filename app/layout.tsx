@@ -4,7 +4,7 @@ import { NavbarSimple } from "./_components/Header";
 import LoginSection from "./_components/LoginSection";
 import { SimpleFooter } from "./_components/Footer";
 
-
+import whatsapp_icon from "@/images/whatsapp.png";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -39,6 +39,9 @@ export default function RootLayout({
           flex flex-col lg:flex-row w-full lg:justify-evenly gap-y-6 gap-x-12 border-t border-blue-gray-50 md:px-12 py-4 lg:py-0">
           <SimpleFooter />
         </footer>
+
+        <img src={whatsapp_icon.src} className="whatsapp_icon h-12 lg:h-14 m-6 lg:m-8" />
+
       </body>
     </html>
 
