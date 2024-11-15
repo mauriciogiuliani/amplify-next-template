@@ -7,12 +7,12 @@ specifies that any user authenticated via an API key can "create", "read",
 "update", and "delete" any "Todo" records.
 =========================================================================*/
 const schema = a.schema({
-  Todo: a
-    .model({
-      content: a.string(),
-      isDone: a.boolean()
-    })
-    .authorization((allow) => [allow.publicApiKey()]),
+  // Todo: a
+  //   .model({
+  //     content: a.string(),
+  //     isDone: a.boolean()
+  //   })
+  //   .authorization((allow) => [allow.publicApiKey()]),
 
   Consumidor: a
     .model({
@@ -22,6 +22,31 @@ const schema = a.schema({
       permissionaria: a.string(),
       grupo: a.string(),
       sub_grupo: a.string(),
+    })
+    .authorization((allow) => [allow.publicApiKey()]),
+
+  Produto: a
+    .model({
+      id: a.id(),
+      nome: a.string(),
+      descricao: a.string(),
+      preco_unico: a.float(),
+      preco_patamar_pesado: a.float(),
+      preco_patamar_leve: a.float(),
+      multa: a.float(),
+      vendedor: a.string(),
+    })
+    .authorization((allow) => [allow.publicApiKey()]),
+
+  Grupo: a
+    .model({
+      id: a.id(),
+      nome: a.string(),
+      comunicacao: a.string(),
+      fidelidade: a.boolean(),
+      periodo_teste: a.boolean(),
+      vizinhanca: a.boolean(),
+      produtos: a.string()
     })
     .authorization((allow) => [allow.publicApiKey()]),
 });
