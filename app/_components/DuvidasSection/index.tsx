@@ -24,7 +24,8 @@ export function DuvidasSection() {
 
     const handleOpen = (value: any) => setOpen(open === value ? 0 : value);
     return (
-        <section className="bg-white px-8 py-12 lg:py-32">
+        <section id="duvidas"
+            className="bg-white px-8 py-12 lg:py-24">
 
             <div className="container mx-auto ">
 
@@ -38,7 +39,7 @@ export function DuvidasSection() {
                         Dúvidas Frequentes
                     </Typography>
 
-                    <img src={icon_duvidas.src} className="h-12 lg:h-12 ml-2 mb-4 "/>
+                    <img src={icon_duvidas.src} className="h-12 lg:h-12 ml-2 mb-4 " />
                 </div>
 
 

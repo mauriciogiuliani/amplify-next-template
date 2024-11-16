@@ -3,7 +3,8 @@ import lifestyle_img from "@/images/lifestyle.jpg";
 
 export function Beneficios() {
     return (
-        <section className="bg-primary px-8 py-12 lg:py-32">
+        <section id="beneficios"
+            className="bg-primary px-8 py-12 lg:py-24 beneficios-background">
             <div className="container mx-auto ">
                 <Typography
                     variant="h2"

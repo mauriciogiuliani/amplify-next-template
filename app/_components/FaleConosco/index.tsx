@@ -3,7 +3,11 @@ import lifestyle_img from "@/images/lifestyle.jpg";
 
 export function FaleConosco() {
     return (
-        <section className="bg-primary px-8 py-12 lg:py-24">
+        <section
+            id="fale_conosco"
+            className="bg-primary px-8 py-12 lg:py-24"
+        >
+            
             <div className="container mx-auto ">
                 <Typography
                     variant="h2"
@@ -23,7 +27,7 @@ export function FaleConosco() {
                     <CardBody>
                         <form action="#" className="mx-auto max-w-[24rem] text-left">
                             <div className="mb-4">
-                                <label htmlFor="numero_uc">
+                                <label htmlFor="fale_conosco_nome">
                                     <Typography
                                         variant="small"
                                         className="mb-2 block font-medium text-gray-900">
@@ -32,8 +36,8 @@ export function FaleConosco() {
                                 </label>
 
                                 <Input
-                                    id="numero_uc"
-                                    name="numero_uc"
+                                    id="fale_conosco_nome"
+                                    name="fale_conosco_nome"
                                     size="lg"
                                     crossOrigin={"anonymous"}
                                     labelProps={{
@@ -45,7 +49,7 @@ export function FaleConosco() {
                             </div>
 
                             <div className="mb-4">
-                                <label htmlFor="numero_uc">
+                                <label htmlFor="fale_conosco_email">
                                     <Typography
                                         variant="small"
                                         className="mb-2 block font-medium text-gray-900">
@@ -54,8 +58,8 @@ export function FaleConosco() {
                                 </label>
 
                                 <Input
-                                    id="numero_uc"
-                                    name="numero_uc"
+                                    id="fale_conosco_email"
+                                    name="fale_conosco_email"
                                     size="lg"
                                     crossOrigin={"anonymous"}
                                     labelProps={{
@@ -68,7 +72,7 @@ export function FaleConosco() {
                             </div>
 
                             <div className="mb-4">
-                                <label htmlFor="numero_uc">
+                                <label htmlFor="fale_conosco_telefone">
                                     <Typography
                                         variant="small"
                                         className="mb-2 block font-medium text-gray-900">
@@ -77,8 +81,8 @@ export function FaleConosco() {
                                 </label>
 
                                 <Input
-                                    id="numero_uc"
-                                    name="numero_uc"
+                                    id="fale_conosco_telefone"
+                                    name="fale_conosco_telefone"
                                     size="lg"
                                     crossOrigin={"anonymous"}
                                     labelProps={{
@@ -91,7 +95,7 @@ export function FaleConosco() {
                             </div>
 
                             <div className="mb-4">
-                                <label htmlFor="numero_uc">
+                                <label htmlFor="fale_conosco_duvida">
                                     <Typography
                                         variant="small"
                                         className="mb-2 block font-medium text-gray-900">
@@ -100,8 +104,8 @@ export function FaleConosco() {
                                 </label>
 
                                 <Textarea
-                                    id="numero_uc"
-                                    name="numero_uc"
+                                    id="fale_conosco_duvida"
+                                    name="fale_conosco_duvida"
                                     size="lg"
                                     labelProps={{
                                         className: "hidden",

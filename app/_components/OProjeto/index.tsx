@@ -50,7 +50,8 @@ const testimonials = [
 
 export function OProjeto() {
     return (
-        <section className="px-8 py-12 lg:py-24">
+        <section id="projeto"
+            className="px-8 py-12 lg:py-24">
             <div className="container mx-auto">
 
                 {/* <div className="flex justify-center mb-8 h-10 lg:h-14">
