@@ -1,7 +1,7 @@
 import { Carousel, Typography, Button, Card } from "@material-tailwind/react";
 import lifestyle_img from "@/images/lifestyle.jpg";
 
-export function Beneficios() {
+const CarouselSection = () => {
     return (
         <section id="beneficios"
             className="bg-primary px-8 py-12 lg:py-24 beneficios-background">
@@ -84,3 +84,5 @@ export function Beneficios() {
         </section>
     );
 }
+
+export default CarouselSection;

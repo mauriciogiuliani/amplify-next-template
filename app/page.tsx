@@ -1,48 +1,35 @@
 "use client";
 
-import { generateClient } from "aws-amplify/data";
+// import "@aws-amplify/ui-react/styles.css";
+// import "./app.css";
 
-
-import type { Schema } from "@/amplify/data/resource";
 import outputs from "@/amplify_outputs.json";
-import "@aws-amplify/ui-react/styles.css";
 import { Amplify } from "aws-amplify";
-import "./../app/app.css";
-import { Beneficios } from "./_components/Beneficios";
-import { DuvidasSection } from "./_components/DuvidasSection";
-import LoginSection from "./_components/LoginSection";
-import OProjeto from "./_components/OProjeto";
-import { SimpleFooter } from "./_components/Footer";
 
-
-import { FaleConosco } from "./_components/FaleConosco";
+import ContactSection from "./_components/ContactSection";
+import MainSection from "./_components/MainSection";
+import DescriptionSection from "./_components/DescriptionSection";
+import CarouselSection from "./_components/CarouselSection";
+import FAQSection from "./_components/FAQSection";
 
 Amplify.configure(outputs);
 
-const client = generateClient<Schema>();
 
 export default function App() {
 
 
   return (
     <>
-      <LoginSection />
+      <MainSection />
 
-      <OProjeto />
+      <DescriptionSection />
 
-      <Beneficios />
+      <CarouselSection />
 
-      <DuvidasSection />
+      <FAQSection />
 
-      <FaleConosco />
-      
-
-      
-
+      <ContactSection />
 
     </>
-
-
-
   );
 }

@@ -1,19 +1,19 @@
 'use client'
 
-import React, { useState } from "react";
 import {
-  Navbar,
-  Collapse,
-  Typography,
-  IconButton,
-  Button,
   Alert,
+  Collapse,
+  IconButton,
+  Navbar,
+  Typography
 } from "@material-tailwind/react";
+import React, { use, useEffect, useState } from "react";
 
-import sipam from "@/images/sipam_logo.png";
 import sipam_v2 from "@/images/logo/sipam_v2.jpg";
 
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+
+import { useAlert } from "@/layout/AlertMessage/AlertContext";
 
 function NavList() {
   return (
@@ -47,28 +47,33 @@ function NavList() {
   );
 }
 
+
+
+
 export function NavbarSimple() {
+
+
   const [openNav, setOpenNav] = React.useState(false);
 
-  const handleWindowResize = () =>
+  const handleWindowResize = () => {
     window.innerWidth >= 960 && setOpenNav(false);
+  }
 
-  React.useEffect(() => {
+  const [open, setOpen] = useState(false);
+  const { alertMessage } = useAlert();
+
+
+  useEffect(() => {
+    alertMessage ? setOpen(true) : setOpen(false);
+
     window.addEventListener("resize", handleWindowResize);
 
-    return () => {
-      window.removeEventListener("resize", handleWindowResize);
-    };
-  }, []);
+  }, [alertMessage]);
 
 
-  const [open, setOpen] = useState(true);
 
 
   return (
-
-
-
 
     <>
       <Navbar className=""
@@ -98,14 +103,19 @@ export function NavbarSimple() {
           <NavList />
         </Collapse>
       </Navbar>
-      <Alert className="rounded-none"
 
+
+
+      <Alert className="rounded-none"
+        variant="ghost"
         open={open}
         onClose={() => setOpen(false)}
         color="red"
 
       >
-        A dismissible alert for showing message.
-      </Alert></>
+        {alertMessage}
+
+      </Alert>
+    </>
   );
 }

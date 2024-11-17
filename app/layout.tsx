@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
+import { SimpleFooter } from "../layout/Footer";
+import { NavbarSimple } from "../layout/Header";
 import "./globals.css";
-import { NavbarSimple } from "./_components/Header";
-import LoginSection from "./_components/LoginSection";
-import { SimpleFooter } from "./_components/Footer";
 
 import whatsapp_icon from "@/images/whatsapp.png";
+import { AlertProvider } from "@/layout/AlertMessage/AlertContext";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   title: "Mercado Livre de Energia",
   description: "Sistema de adesão ao projeto mercado livre de energia",
 };
+
+
+export interface LayoutProps {
+  alertMessage: string;
+}
 
 export default function RootLayout({
   children,
@@ -22,23 +27,25 @@ export default function RootLayout({
 
     <html lang="en">
       <body>
-        <header className=" sticky top-0  bg-white opacity-100 z-50">
-          <NavbarSimple />
-        </header>
 
+        <AlertProvider>
+          <header className=" sticky top-0  bg-white opacity-100 z-50">
+            <NavbarSimple />
+          </header>
 
-        <main>
+          <main>
+            {children}
+          </main>
 
-
-          {children}
-
-        </main>
-
+        </AlertProvider>
+        
         <footer
           className="sticky top-0 bg-white 
           flex flex-col lg:flex-row w-full lg:justify-evenly gap-y-6 gap-x-12 border-t border-blue-gray-50 md:px-12 py-4 lg:py-0">
           <SimpleFooter />
         </footer>
+
+
 
         <img src={whatsapp_icon.src} className="whatsapp_icon h-12 lg:h-14 m-6 lg:m-8" />
 

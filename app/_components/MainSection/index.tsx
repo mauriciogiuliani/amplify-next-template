@@ -1,17 +1,15 @@
 "use client";
-import { useEffect, useState } from "react";
 
-import { Typography, Input, Button, Select, Option, Alert } from "@material-tailwind/react";
-import { EyeSlashIcon, EyeIcon } from "@heroicons/react/24/solid";
+import { useState } from "react";
+import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
+import { Button, Input, Option, Select, Typography } from "@material-tailwind/react";
 
-import { generateClient } from 'aws-amplify/data';
 import { type Schema } from '@/amplify/data/resource';
-import { AlertDismissible } from "../Alert";
+import { generateClient } from 'aws-amplify/data';
+import { useAlert } from "@/layout/AlertMessage/AlertContext";
 
 
-
-
-const LoginSection: React.FC = () => {
+const MainSection: React.FC = () => {
     const [numeroUC, setNumeroUC] = useState("");
     const [permissionaria, setPermissionaria] = useState("");
     const [chaveAcesso, setChaveAcesso] = useState("");
@@ -19,15 +17,21 @@ const LoginSection: React.FC = () => {
     const [passwordShown, setPasswordShown] = useState(false);
     const togglePasswordVisiblity = () => setPasswordShown((cur) => !cur);
 
-
     const client = generateClient<Schema>();
 
-    const handleVerOpcoes = async () => {
-        console.log(client)
-        console.log("ver opcoes");
-        console.log(numeroUC, permissionaria, chaveAcesso);
+    const { showAlert } = useAlert();
+    
 
-        const record = await client.models.Consumidor.list({
+    const handleFormSubmit = async (event: React.FormEvent) => {
+        event.preventDefault();
+
+        // Validate form fields
+        if (!numeroUC || !permissionaria || !chaveAcesso) {
+            showAlert("Preencha todos os campos!");
+            return;
+        }
+
+        const consumidor = await client.models.Consumidor.list({
             filter: {
                 and: [
                     { numero_uc: { eq: numeroUC } },
@@ -37,15 +41,18 @@ const LoginSection: React.FC = () => {
             }
         })
 
-        console.log(record);
+        if(consumidor.data.length > 0) {
+            showAlert("Consumidor já cadastrado!");
+        } else {
+            showAlert("Consumidor não encontrado, verifique os dados e tente novamente!");
+        }
     }
 
-    
+
 
     return (
 
-        <section id="inicio"
-            className="bg-primary container px-4 2xl:px-32 py-12 lg:py-24 max-w-full hero-image">
+        <section className="bg-primary container px-4 2xl:px-32 py-12 lg:py-24 max-w-full hero-image">
 
             <div className="container mx-auto">
                 <div className="grid gap-2 2xl:gap-24 lg:grid-cols-2 items-center w-full section-content ">
@@ -67,8 +74,10 @@ const LoginSection: React.FC = () => {
                             <div className="grid text-center items-center px-4 py-10">
 
 
-                                <form action="#" className="mx-auto max-w-[24rem] text-left">
-                                    
+                                <form
+                                    className="mx-auto max-w-[24rem] text-left"
+                                    onSubmit={handleFormSubmit}
+                                >
                                     <div className="mb-4">
                                         <Typography variant="paragraph" className="text-xl text-primary md:text-xl mb-8 text-center">
                                             Faça parte dessa revolução energética!
@@ -89,11 +98,11 @@ const LoginSection: React.FC = () => {
                                             crossOrigin={"anonymous"}
                                             className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
                                             labelProps={{
-                                                className: "before:content-none after:content-none",
+                                                className: "before:content-none after:content-none hidden",
                                             }}
                                             onChange={(e) => setNumeroUC(e.target.value)}
                                             value={numeroUC}
-                                        // required
+                                            required
                                         />
                                     </div>
 
@@ -114,13 +123,11 @@ const LoginSection: React.FC = () => {
                                             size="lg"
                                             className=" !border-blue-gray-200 focus:!border-gray-900"
                                             labelProps={{
-                                                className: "before:content-none after:content-none",
+                                                className: "before:content-none after:content-none hidden",
                                             }}
                                             onChange={(e) => setPermissionaria(e ? e : "")}
                                             value={permissionaria}
-
                                         >
-
                                             <Option value="CERBRANORTE">CERBRANORTE</Option>
                                             <Option value="CERTAJA">CERTAJA</Option>
                                             <Option value="CERTEL">CERTEL</Option>
@@ -146,7 +153,7 @@ const LoginSection: React.FC = () => {
                                             placeholder="********"
                                             className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
                                             labelProps={{
-                                                className: "before:content-none after:content-none",
+                                                className: "before:content-none after:content-none hidden",
                                             }}
                                             type={passwordShown ? "text" : "password"}
                                             icon={
@@ -169,7 +176,7 @@ const LoginSection: React.FC = () => {
                                         className="bg-primary mt-6"
                                         size="lg"
                                         fullWidth
-                                        onClick={handleVerOpcoes}
+                                        type="submit"
                                     >
                                         Ver Opções
                                     </Button>
@@ -190,4 +197,4 @@ const LoginSection: React.FC = () => {
     )
 }
 
-export default LoginSection;
+export default MainSection;

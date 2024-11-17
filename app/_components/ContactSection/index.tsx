@@ -1,7 +1,7 @@
 import { Carousel, Typography, Button, Card, CardHeader, CardBody, Input, Textarea } from "@material-tailwind/react";
 import lifestyle_img from "@/images/lifestyle.jpg";
 
-export function FaleConosco() {
+const ContactSection = () => {
     return (
         <section
             id="fale_conosco"
@@ -130,3 +130,5 @@ export function FaleConosco() {
         </section>
     );
 }
+
+export default ContactSection;

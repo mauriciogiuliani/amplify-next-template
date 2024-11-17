@@ -1,7 +1,6 @@
-import { Accordion, AccordionBody, AccordionHeader, Typography } from "@material-tailwind/react";
-import { AccordionCustomIcon } from "../Accordion";
-import { useState } from "react";
 import icon_duvidas from "@/images/icons/duvidas.png";
+import { Accordion, AccordionBody, AccordionHeader, Typography } from "@material-tailwind/react";
+import { useState } from "react";
 
 
 function Icon(id: any, open: any) {
@@ -19,7 +18,7 @@ function Icon(id: any, open: any) {
     );
 }
 
-export function DuvidasSection() {
+const FAQSection = () => {
     const [open, setOpen] = useState(0);
 
     const handleOpen = (value: any) => setOpen(open === value ? 0 : value);
@@ -190,3 +189,6 @@ export function DuvidasSection() {
         </section>
     )
 }
+
+
+export default FAQSection;
