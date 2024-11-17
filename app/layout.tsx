@@ -23,6 +23,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+
+
+  const whatsappText = encodeURIComponent("Olá, gostaria de mais informações sobre o Projeto de Adesaão ao Mercado Livre de Energia");
+  const whatsappPhone = "5551984084420";
+
   return (
 
     <html lang="en">
@@ -45,9 +50,13 @@ export default function RootLayout({
           <SimpleFooter />
         </footer>
 
+        <a
+          target="_blank"
+          href={"https://api.whatsapp.com/send?phone=" + whatsappPhone + "&text=" + whatsappText}
+        >
+          <img src={whatsapp_icon.src} className="whatsapp_icon h-12 lg:h-14 m-6 lg:m-8" />
+        </a>
 
-
-        <img src={whatsapp_icon.src} className="whatsapp_icon h-12 lg:h-14 m-6 lg:m-8" />
 
       </body>
     </html>
