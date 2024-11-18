@@ -2,6 +2,11 @@ import { Carousel, Typography, Button, Card, CardHeader, CardBody, Input, Textar
 import lifestyle_img from "@/images/lifestyle.jpg";
 
 const ContactSection = () => {
+
+    const handleFormSubmit = () => {
+        alert("Mensagem enviada com sucesso");
+    }
+
     return (
         <section
             id="fale_conosco"
@@ -11,13 +16,15 @@ const ContactSection = () => {
             <div className="container mx-auto">
                 <div className="grid gap-2 2xl:gap-24 lg:grid-cols-2 items-center ">
 
-                    <div className="mx-2 ">
+                    <div className="space-y-4 mx-2 ">
                         <Typography variant="h2" className="text-3xl font-bold tracking-tighter text-white sm:text-5xl xl:text-5xl/none lg:text-start">
                             Fale Consco
                         </Typography>
 
                         <Typography variant="paragraph" className="text-secondary text-xl  lg:text-start">
-                        Tem dúvidas em relação ao projeto? Use o formulário ao lado e tire todas suas dúvidas, se preferrir clique no botão de whatsapp ao lado e fale diretamente conosco.
+                            Tem dúvidas em relação ao projeto?
+                            <br></br>
+                            Use o formulário ao lado e tire todas suas dúvidas, se preferrir clique no botão de whatsapp ao lado e fale diretamente conosco.
                         </Typography>
                     </div>
 
@@ -27,81 +34,89 @@ const ContactSection = () => {
 
                             <div className="grid text-center items-center px-4 py-10">
 
-                                <form action="#" className="mx-auto max-w-[24rem] text-left">
+                                <form
+                                    className="mx-4 lg:mx-24 text-left"
+                                    onSubmit={handleFormSubmit}
+                                >
                                     <div className="mb-4">
-                                        <label htmlFor="fale_conosco_nome">
+                                        <label htmlFor="nome">
                                             <Typography
                                                 variant="small"
-                                                className="mb-2 block font-medium text-gray-900">
+                                                className="mb-2 block font-bold text-gray-900">
                                                 Nome
                                             </Typography>
                                         </label>
 
                                         <Input
-                                            id="fale_conosco_nome"
-                                            name="fale_conosco_nome"
+                                            id="nome"
+                                            name="nome"
                                             size="lg"
                                             crossOrigin={"anonymous"}
+                                            className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
                                             labelProps={{
-                                                className: "hidden",
+                                                className: "before:content-none after:content-none hidden",
                                             }}
-                                            className="focus:border-t-black"
-
+                                            // onChange={(e) => setNumeroUC(e.target.value)}
+                                            // value={numeroUC}
+                                            required
                                         />
                                     </div>
 
                                     <div className="mb-4">
-                                        <label htmlFor="fale_conosco_email">
+                                        <label htmlFor="email">
                                             <Typography
                                                 variant="small"
-                                                className="mb-2 block font-medium text-gray-900">
+                                                className="mb-2 block font-bold text-gray-900">
                                                 Email
                                             </Typography>
                                         </label>
 
                                         <Input
-                                            id="fale_conosco_email"
-                                            name="fale_conosco_email"
+                                            id="email"
+                                            name="email"
+                                            type="email"
                                             size="lg"
                                             crossOrigin={"anonymous"}
+                                            className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
                                             labelProps={{
-                                                className: "hidden",
+                                                className: "before:content-none after:content-none hidden",
                                             }}
-                                            className="focus:border-t-black"
-                                            type="email"
-
+                                            // onChange={(e) => setNumeroUC(e.target.value)}
+                                            // value={numeroUC}
+                                            required
                                         />
                                     </div>
 
                                     <div className="mb-4">
-                                        <label htmlFor="fale_conosco_telefone">
+                                        <label htmlFor="telefone">
                                             <Typography
                                                 variant="small"
-                                                className="mb-2 block font-medium text-gray-900">
+                                                className="mb-2 block font-bold text-gray-900">
                                                 Telefone
                                             </Typography>
                                         </label>
 
                                         <Input
-                                            id="fale_conosco_telefone"
-                                            name="fale_conosco_telefone"
+                                            id="telefone"
+                                            name="telefone"
                                             size="lg"
                                             crossOrigin={"anonymous"}
+                                            className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
                                             labelProps={{
-                                                className: "hidden",
+                                                className: "before:content-none after:content-none hidden",
                                             }}
-                                            className="focus:border-t-black"
-                                            placeholder="(00) 00000-0000"
-
+                                            // onChange={(e) => setNumeroUC(e.target.value)}
+                                            // value={numeroUC}
+                                            required
                                         />
                                     </div>
 
-                                    <div className="mb-4">
-                                        <label htmlFor="fale_conosco_duvida">
+                                    <div className="mb-6">
+                                        <label htmlFor="telefone">
                                             <Typography
                                                 variant="small"
-                                                className="mb-2 block font-medium text-gray-900">
-                                                Duvida
+                                                className="mb-2 block font-bold text-gray-900">
+                                                Dúvida
                                             </Typography>
                                         </label>
 
@@ -112,18 +127,24 @@ const ContactSection = () => {
                                             labelProps={{
                                                 className: "hidden",
                                             }}
-                                            className="focus:border-t-black"
-
+                                           className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
                                         />
+
+                                        
                                     </div>
 
-
-                                    <Button size="lg" className="bg-primary mt-6" fullWidth>
-                                        Enviar
+                                    <Button
+                                        className="bg-primary mt-6"
+                                        size="lg"
+                                        fullWidth
+                                        type="submit"
+                                    >
+                                        ENVIAR
                                     </Button>
-
+                 
                                 </form>
 
+                               
 
 
                             </div>

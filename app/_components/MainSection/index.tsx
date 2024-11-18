@@ -61,7 +61,7 @@ const MainSection: React.FC = () => {
     return (
 
         <section 
-            className="bg-[url('/images/background/main.jpg')] px-4 2xl:px-32 py-12 lg:py-24 ">
+            className="bg-[url('/images/background/main.jpg')] bg-cover px-4 2xl:px-32 py-12 lg:py-24 ">
                 
             <div className="container mx-auto">
                 <div className="grid gap-2 2xl:gap-24 lg:grid-cols-2 items-center w-full ">
@@ -102,7 +102,7 @@ const MainSection: React.FC = () => {
                                             <label htmlFor="numero_uc">
                                                 <Typography
                                                     variant="small"
-                                                    className="mb-2 block font-medium text-gray-900">
+                                                    className="mb-2 block font-bold text-gray-900">
                                                     Número da UC
                                                 </Typography>
                                             </label>
@@ -128,7 +128,7 @@ const MainSection: React.FC = () => {
                                             <label htmlFor="cooperativa_select">
                                                 <Typography
                                                     variant="small"
-                                                    className="mb-2 block font-medium text-gray-900"
+                                                    className="mb-2 block font-bold text-gray-900"
                                                 >
                                                     Selecione a Cooperativa
                                                 </Typography>
@@ -158,7 +158,7 @@ const MainSection: React.FC = () => {
                                             <label htmlFor="password">
                                                 <Typography
                                                     variant="small"
-                                                    className="mb-2 block font-medium text-gray-900"
+                                                    className="mb-2 block font-bold text-gray-900"
                                                 >
                                                     Senha (4 primeiros dígitos do seu CPF/CNPJ)
                                                 </Typography>

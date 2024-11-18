@@ -8,12 +8,14 @@ const CarouselSection = () => {
             className="bg-[url('/images/background/carousel.jpg')] bg-cover px-8 py-12 lg:py-24">
 
             <div className="container mx-auto ">
-                <Typography variant="h2" className="text-3xl font-bold tracking-tighter text-white sm:text-5xl xl:text-5xl/none lg:text-start">
-                    Benefícios
-                </Typography>
-                <Typography variant="paragraph" className="text-secondary text-xl  lg:text-start">
-                    Descubra os benefícios que o Projeto Experimental Abertura de Mercado traz para você.
-                </Typography>
+                <div className="space-y-4 mx-2 ">
+                    <Typography variant="h2" className="text-3xl font-bold tracking-tighter text-white sm:text-5xl xl:text-5xl/none lg:text-start">
+                        Benefícios
+                    </Typography>
+                    <Typography variant="paragraph" className="text-secondary text-xl  lg:text-start">
+                        Descubra os benefícios que o Projeto Experimental Abertura de Mercado traz para você.
+                    </Typography>
+                </div>
 
                 <Carousel className="py-12 "
                     // autoplay

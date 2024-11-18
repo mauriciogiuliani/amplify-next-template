@@ -19,30 +19,32 @@ export function SimpleFooter() {
   return (
     <>
 
-      
-
-      <div className="grid grid-cols-3 place-items-center lg:flex lg:items-center lg:space-x-6">
 
 
-        <img src={certaja_logo.src} alt={""} />
 
-        <img src={cebranorte_logo.src} alt={""} />
 
-        <img src={certel_logo.src} alt={""} />
+     
+      <div className="flex mx-auto lg:items-center lg:space-x-6 gap-0">
 
-        <img src={coprel_logo.src} alt={""} />
 
-        <img src={infracoop_logo.src} alt={""} />
+        <img src={certaja_logo.src} alt={""} className="h-8 lg:h-[4rem]" />
 
-        <img src={coop_logo.src} alt={""} />
+        <img src={cebranorte_logo.src} alt={""} className="h-8 lg:h-[4rem]" />
 
-      </div>
+        <img src={certel_logo.src} alt={""} className="h-8 lg:h-[4rem]" />
 
-      <div className="my-auto">
-        <img src={aneel_logo.src} alt={""} />
+        <img src={coprel_logo.src} alt={""} className="h-8 lg:h-[4rem]" />
+
+        <img src={infracoop_logo.src} alt={""} className="h-8 lg:h-[4rem]" />
+
+        <img src={coop_logo.src} alt={""} className="h-8 lg:h-[4rem]" />
 
       </div>
 
+      <div className="mx-auto">
+        <img src={aneel_logo.src} alt={""} className="h-10 lg:h-[5rem]" />
+
+      </div>
     </>
   );
 }

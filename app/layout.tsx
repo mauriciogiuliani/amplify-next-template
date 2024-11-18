@@ -5,6 +5,7 @@ import whatsapp_icon from "@/images/whatsapp.png";
 import { AlertProvider } from "./_layout/AlertMessage/AlertContext";
 import { SimpleFooter } from "./_layout/Footer";
 import { NavbarSimple } from "./_layout/Header";
+import { useEffect } from "react";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -28,34 +29,36 @@ export default function RootLayout({
   const whatsappText = encodeURIComponent("Olá, gostaria de mais informações sobre o Projeto de Adesaão ao Mercado Livre de Energia");
   const whatsappPhone = "5551984084420";
 
+
   return (
 
-    <html lang="en">
+    <html lang="pt_BR">
       <body>
-
         <AlertProvider>
-          <header className=" sticky top-0  bg-white opacity-100 z-50">
+          <header className=" sticky top-0 bg-white opacity-100 z-10">
             <NavbarSimple />
           </header>
 
-          <main>
+          <main className="">
             {children}
           </main>
-
         </AlertProvider>
-
-        <footer
-          className="sticky top-0 bg-white 
-          flex flex-col lg:flex-row w-full lg:justify-evenly gap-y-6 gap-x-12 border-t border-blue-gray-50  py-4 md:px-12 lg:py-12">
-          <SimpleFooter />
-        </footer>
 
         <a
           target="_blank"
           href={"https://api.whatsapp.com/send?phone=" + whatsappPhone + "&text=" + whatsappText}
+
         >
-          <img src={whatsapp_icon.src} className="whatsapp_icon h-12 lg:h-14 m-6 lg:m-8" />
+          <img src={whatsapp_icon.src} className="whatsapp_icon h-12 lg:h-14 m-6 lg:m-8 bottom-4 lg:bottom-0" />
         </a>
+
+        <footer
+          className="sticky top-0 bg-white 
+          flex flex-col lg:flex-row w-full lg:justify-evenly gap-y-2  border-t border-blue-gray-50  py-4 md:px-12 lg:py-12">
+          <SimpleFooter />
+        </footer>
+
+
 
 
       </body>

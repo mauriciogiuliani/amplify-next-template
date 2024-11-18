@@ -33,20 +33,6 @@ function TestimonialCard({
     );
 }
 
-const testimonials = [
-    {
-        title:
-            "O Projeto Experimental Abertura de Mercado foi criado para proporcionar aos clientes uma experiência prática com o Mercado Livre de Energia, ainda sob a supervisão da distribuidora. Este projeto permitirá que os consumidores vivenciem a proatividade no setor energético e exerçam sua liberdade de escolher entre produtos reais disponíveis no mercado.",
-    },
-    {
-        title:
-            "It have broadened my horizons and helped me advance my career. The community is incredibly supportive.",
-    },
-    {
-        title:
-            "It have broadened my horizons and helped me advance my career. The community is incredibly supportive.",
-    },
-];
 
 export function OProjeto() {
     return (
@@ -58,12 +44,11 @@ export function OProjeto() {
                     <img src={icon_lampadas.src} />
                 </div> */}
 
-                <Typography
-                    variant="h2"
-                    className="mb-4 !text-2xl lg:!text-4xl text-primary"
-                >
+                <Typography variant="h2" className="text-3xl font-bold tracking-tighter text-primary sm:text-5xl xl:text-5xl/none lg:text-start mb-4">
                     O Projeto
                 </Typography>
+
+
                 <Typography
                     variant="paragraph"
                     className="max-w !text-gray-500"
