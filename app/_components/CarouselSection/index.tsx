@@ -18,7 +18,7 @@ const CarouselSection = () => {
                 </div>
 
                 <Carousel className="py-12 "
-                    // autoplay
+                    autoplay
                     loop
                     prevArrow={({ handlePrev }) => (
                         <IconButton
