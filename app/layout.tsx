@@ -46,7 +46,7 @@ export default function RootLayout({
 
         <footer
           className="sticky top-0 bg-white 
-          flex flex-col lg:flex-row w-full lg:justify-evenly gap-y-6 gap-x-12 border-t border-blue-gray-50 md:px-12 py-4 lg:py-0">
+          flex flex-col lg:flex-row w-full lg:justify-evenly gap-y-6 gap-x-12 border-t border-blue-gray-50  py-4 md:px-12 lg:py-12">
           <SimpleFooter />
         </footer>
 

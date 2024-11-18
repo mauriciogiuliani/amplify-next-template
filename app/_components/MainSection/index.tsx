@@ -8,6 +8,7 @@ import { type Schema } from '@/amplify/data/resource';
 import { generateClient } from 'aws-amplify/data';
 import { useAlert } from "@/app/_layout/AlertMessage/AlertContext";
 
+import background_img from "@/images/login_form_background_02.jpg"
 
 const MainSection: React.FC = () => {
     const [numeroUC, setNumeroUC] = useState("");
@@ -59,8 +60,9 @@ const MainSection: React.FC = () => {
 
     return (
 
-        <section className="bg-primary container px-4 2xl:px-32 py-12 lg:py-24 max-w-full hero-image">
-
+        <section 
+            className="bg-[url('/images/background/main.jpg')] px-4 2xl:px-32 py-12 lg:py-24 ">
+                
             <div className="container mx-auto">
                 <div className="grid gap-2 2xl:gap-24 lg:grid-cols-2 items-center w-full ">
 

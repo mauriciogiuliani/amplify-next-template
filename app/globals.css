@@ -13,13 +13,6 @@ html {
 }
 
 
-.hero-image {
-    background-image: url("../images/login_form_background_02.jpg");
-}
-
-.beneficios-background {
-    background-image: url("../images/beneficios_background_01.jpg");
-}
 
 .hero-image-opacity {
     position: absolute;
