@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { CheckCircleIcon, EyeIcon, EyeSlashIcon, MinusCircleIcon } from "@heroicons/react/24/solid";
-import { Button, Card, CardBody, CardFooter, CardHeader, Dialog, DialogBody, DialogFooter, DialogHeader, Input, Option, Select, Spinner, Typography } from "@material-tailwind/react";
+import { Button, Card, CardBody, CardFooter, CardHeader, Dialog, DialogBody, DialogFooter, DialogHeader, Drawer, IconButton, Input, Option, Select, Spinner, Typography } from "@material-tailwind/react";
 
 import { type Schema } from '@/amplify/data/resource';
 import { generateClient } from 'aws-amplify/data';
@@ -10,7 +10,10 @@ import { useAlert } from "@/app/_layout/AlertMessage/AlertContext";
 
 import background_img from "@/images/login_form_background_02.jpg"
 import { InformationCircleIcon } from "@heroicons/react/24/outline";
+import PDFViewer from "./Produtos";
 
+
+// import pdfUrl from "@/c:\Users\Mauricio_Giuliani\OneDrive - Dell Technologies\Mauricio\#Personal\__SIAD\Demonstrativo_modelo CERTAJA ML2.pdf"
 const MainSection: React.FC = () => {
     const [numeroUC, setNumeroUC] = useState("");
     const [permissionaria, setPermissionaria] = useState("");
@@ -68,19 +71,14 @@ const MainSection: React.FC = () => {
     return (
         <>
 
+
             <Dialog
-                open={saibaMais }
-                size="xxl"
+                open={saibaMais}
+                size="xl"
                 handler={handleOpen}
             >
-                <DialogHeader>Its a simple modal.</DialogHeader>
-                <DialogBody>
-                    The key to more success is to have a lot of pillows. Put it this way,
-                    it took me twenty five years to get these plants, twenty five years of
-                    blood sweat and tears, and I&apos;m never giving up, I&apos;m just
-                    getting started. I&apos;m up to something. Fan luv.
-                </DialogBody>
-                <DialogFooter>
+                <DialogHeader>
+                    Its a simple modal.
                     <Button
                         variant="text"
                         color="red"
@@ -89,15 +87,24 @@ const MainSection: React.FC = () => {
                     >
                         <span>Cancel</span>
                     </Button>
-                    <Button
-                        variant="gradient"
-                        color="green"
-                        onClick={() => handleOpen()}
-                    >
-                        <span>Confirm</span>
-                    </Button>
-                </DialogFooter>
+                </DialogHeader>
+                <DialogBody className="flex justify-center items-center h-[50rem] overflow-y-auto">
+
+                    <PDFViewer fileUrl="demonstrativo.pdf" />
+
+
+                </DialogBody>
+
             </Dialog>
+
+
+            {/* {saibaMais && (
+                <div>
+                    <Button onClick={handleOpen}>Fechar</Button>
+                    <PDFViewer fileUrl="demonstrativo.pdf" />
+                </div>
+                
+            )} */}
 
             {true && (
                 <section>
@@ -113,7 +120,7 @@ const MainSection: React.FC = () => {
                             </Typography>
                         </div>
 
-                        <div className="flex justify-center  gap-8 my-8">
+                        <div className="flex flex-col lg:flex-row justify-center gap-8 mx-2 my-8">
                             {/* <div className="flex flex-col lg:flex-row gap-4"> */}
 
                             <Card className="max-w-md shadow-sm border border-slate-200 rounded-lg w-full"
@@ -162,7 +169,7 @@ const MainSection: React.FC = () => {
                                     </div>
 
                                     <ul className="flex flex-col gap-3 my-8">
-                                        <li key="1" className="flex items-center gap-3 text-gray-700">
+                                        <li className="flex items-center gap-3 text-gray-700">
                                             <InformationCircleIcon className="h-5 text-primary" />
                                             <Typography
                                                 variant="small"
@@ -172,7 +179,7 @@ const MainSection: React.FC = () => {
 
                                             </Typography>
                                         </li>
-                                        <li key="1" className="flex items-center gap-3 text-gray-700">
+                                        <li className="flex items-center gap-3 text-gray-700">
                                             <InformationCircleIcon className="h-5 text-primary" />
                                             <Typography
                                                 variant="small"
@@ -183,7 +190,7 @@ const MainSection: React.FC = () => {
 
                                             </Typography>
                                         </li>
-                                        <li key="1" className="flex items-center gap-3 text-gray-700">
+                                        <li className="flex items-center gap-3 text-gray-700">
                                             <CheckCircleIcon className="h-8 text-primary" />
                                             <Typography
                                                 variant="small"
@@ -258,7 +265,7 @@ const MainSection: React.FC = () => {
                                     </div>
 
                                     <ul className="flex flex-col gap-3 my-8">
-                                        <li key="1" className="flex items-center gap-3 text-gray-700">
+                                        <li className="flex items-center gap-3 text-gray-700">
                                             <InformationCircleIcon className="h-5 text-primary" />
                                             <Typography
                                                 variant="small"
@@ -268,7 +275,7 @@ const MainSection: React.FC = () => {
 
                                             </Typography>
                                         </li>
-                                        <li key="1" className="flex items-center gap-3 text-gray-700">
+                                        <li className="flex items-center gap-3 text-gray-700">
                                             <InformationCircleIcon className="h-5 text-primary" />
                                             <Typography
                                                 variant="small"
@@ -279,7 +286,7 @@ const MainSection: React.FC = () => {
 
                                             </Typography>
                                         </li>
-                                        <li key="1" className="flex items-center gap-3 text-gray-700">
+                                        <li className="flex items-center gap-3 text-gray-700">
                                             <CheckCircleIcon className="h-8 text-primary" />
                                             <Typography
                                                 variant="small"
@@ -370,7 +377,7 @@ const MainSection: React.FC = () => {
                                     <ul className="flex flex-col gap-3 my-8">
 
 
-                                        <li key="1" className="flex items-center gap-3 text-gray-700">
+                                        <li  className="flex items-center gap-3 text-gray-700">
                                             <CheckCircleIcon className="h-5 text-primary" />
                                             <Typography
                                                 variant="small"
@@ -380,7 +387,7 @@ const MainSection: React.FC = () => {
                                             </Typography>
                                         </li>
 
-                                        <li key="1" className="flex items-center gap-3 text-gray-700">
+                                        <li  className="flex items-center gap-3 text-gray-700">
                                             <CheckCircleIcon className="h-5 text-primary" />
                                             <Typography
                                                 variant="small"
@@ -391,7 +398,7 @@ const MainSection: React.FC = () => {
                                         </li>
 
 
-                                        <li key="1" className="flex items-center gap-3 text-gray-700">
+                                        <li  className="flex items-center gap-3 text-gray-700">
                                             <CheckCircleIcon className="h-5 text-primary" />
                                             <Typography
                                                 variant="small"
