@@ -43,7 +43,6 @@ export function SimpleFooter() {
 
       <div className="mx-auto">
         <img src={aneel_logo.src} alt={""} className="h-10 lg:h-[5rem]" />
-
       </div>
     </>
   );

@@ -20,24 +20,10 @@ const CarouselSection = () => {
                 <Carousel className="py-12 "
                     autoplay
                     loop
-                    prevArrow={({ handlePrev }) => (
-                        <IconButton
-                            onClick={handlePrev}
-                            className="!absolute top-2/4 -left-2 -translate-y-2/4 bg-transparent shadow-none focus-visible:shadow-none"
-                        >
-                            <ChevronLeftIcon strokeWidth={2} className="h-8 text-primary lg:text-white" />
-                        </IconButton>
-                    )}
-                    nextArrow={({ handleNext }) => (
-                        <IconButton
-                            onClick={handleNext}
-                            className="!absolute top-2/4 -right-2 -translate-y-2/4  bg-transparent shadow-none focus-visible:shadow-none"
-                        >
-                            <ChevronRightIcon strokeWidth={2} className="h-8 text-primary lg:text-white" />
-                        </IconButton>
-                    )}>
+                    autoplayDelay={10000}
+                    >
 
-                    <Card className="bg-white p-8 lg:mx-16 min-h-[34rem] lg:min-h-[20rem]  ">
+                    <Card className="bg-white p-8  lg:mx-16 min-h-[34rem] lg:min-h-[20rem]  ">
 
                         <Typography variant="h4" className="mb-4">
                             Liberdade de Escolha na Contratação de Energia

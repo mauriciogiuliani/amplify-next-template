@@ -53,7 +53,11 @@ export function OProjeto() {
                     variant="paragraph"
                     className="max-w !text-gray-500"
                 >
-                    O Projeto Experimental Abertura de Mercado foi criado para que você possa experimentar como funciona o Mercado Livre de Energia, ainda com a supervisão da distribuidora. Isso significa que você terá a chance de escolher entre diferentes opções de energia, como acontece no mercado livre, mas de forma simulada e segura.
+                    O Projeto Experimental de Abertura de Mercado foi desenvolvido para permitir que consumidores experimentem o funcionamento do Mercado Livre de Energia sob a supervisão da distribuidora.
+                    Nesse ambiente simulado e seguro, os participantes podem escolher entre diferentes opções de fornecimento de energia, 
+                    similar ao que ocorre no mercado livre. Dentro desse contexto, o SiPAM BT (Sistema do Projeto de Abertura de Mercado em Baixa Tensão) é a plataforma que viabiliza essa experiência.
+                    Ela permite que consumidores conectados em baixa tensão participem do projeto, simulando a liberdade de escolha de fornecedores de energia e entendendo as dinâmicas do mercado livre,
+                    tudo isso sem comprometer a segurança e a confiabilidade do fornecimento.
                 </Typography>
 
                 <Typography
@@ -84,7 +88,8 @@ export function OProjeto() {
 
                         <CardBody >
                             <Typography variant="paragraph" className="text-gray-700 text-lg" >
-                                Esta é a parte da tarifa que cobre os custos de transporte da energia até sua casa, além de encargos obrigatórios.
+                            Essa é a parte fixa da tarifa, que cobre os custos de transporte da energia até sua casa, além de encargos obrigatórios. 
+                            Mesmo no Mercado Livre de Energia, essa tarifa não muda e continuará sendo cobrada pela distribuidora.
                             </Typography>
                         </CardBody>
                     </Card>
@@ -109,7 +114,7 @@ export function OProjeto() {
 
                         <CardBody >
                             <Typography variant="paragraph" className="text-gray-700 text-lg">
-                                É essa parte da tarifa que você pode mudar no projeto, escolhendo entre diferentes planos. Ela cobre os custos da <b>geração de energia</b>.
+                                É essa parte da tarifa que você pode mudar no projeto, escolhendo entre diferentes planos. Ela cobre os custos da geração de energia.
                             </Typography>
                         </CardBody>
                     </Card>

@@ -97,8 +97,7 @@ const FAQSection = () => {
 
                     </AccordionHeader>
                     <AccordionBody className="text-gray-500 text-lg lg:text-md px-4">
-                        Os planos estão detalhadamente explicados no Saiba Mais de cada produto, inclusive com possibilidade de visualizar um exemplo  no botão Ver exemplo detalhado analise bem e aproveite a liberdade de escolha proporcionada pelo projeto
-
+                        Os planos estão detalhadamente explicados no “Saiba Mais” de cada produto, inclusive com possibilidade de visualizar um exemplo na opção  “Ver exemplo detalhado”. Analise bem e aproveite a liberdade de escolha proporcionada pelo projeto.
                     </AccordionBody>
                 </Accordion>
 

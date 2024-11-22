@@ -1,0 +1,27 @@
+Segue algumas observações do sistema:
+
+(X) - Mudar texto: 
+    Descubra como o mercado livre pode revolucionar sua conta de energia,
+    oferecendo a liberdade de escolher seu fornecedor e a oportunidade de reduzir seus custos de maneira significativa.
+
+(X) - Menu principal:
+    Falta o acento em Benefícios e Dúvidas
+
+(X) - Fale Conosco: 
+    WhatsApp com iniciais maiúsculas
+
+(X) - Corrigir: 
+    Os planos estão detalhadamente explicados no “Saiba Mais” de cada produto, inclusive com possibilidade de visualizar um exemplo na opção  “Ver exemplo detalhado”.
+     Analise bem e aproveite a liberdade de escolha proporcionada pelo projeto.
+
+(X) - Na aba benefícios: 
+    Colocar mais tempo na transição automática de um para o outro, pois não dá tempo suficiente para ler.
+
+(X) - Texto na aba "O Projeto":
+    O Projeto Experimental de Abertura de Mercado foi desenvolvido para permitir que consumidores experimentem o funcionamento do Mercado Livre de Energia sob a supervisão da distribuidora.
+    Nesse ambiente simulado e seguro, os participantes podem escolher entre diferentes opções de fornecimento de energia, 
+    similar ao que ocorre no mercado livre.Dentro desse contexto, o SiPAM BT (Sistema do Projeto de Abertura de Mercado em Baixa Tensão) é a plataforma que viabiliza essa experiência. Ela permite que consumidores conectados em baixa tensão participem do projeto, simulando a liberdade de escolha de fornecedores de energia e entendendo as dinâmicas do mercado livre, tudo isso sem comprometer a segurança e a confiabilidade do fornecimento.
+
+(X) - Texto para aba "O Projeto" que descreve "Tarifa de Uso do Sistema de Distribuição": 
+    Essa é a parte fixa da tarifa, que cobre os custos de transporte da energia até sua casa, além de encargos obrigatórios. 
+    Mesmo no Mercado Livre de Energia, essa tarifa não muda e continuará sendo cobrada pela distribuidora.

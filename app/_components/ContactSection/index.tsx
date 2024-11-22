@@ -24,7 +24,7 @@ const ContactSection = () => {
                         <Typography variant="paragraph" className="text-secondary text-xl  lg:text-start">
                             Tem dúvidas em relação ao projeto?
                             <br></br>
-                            Use o formulário ao lado e tire todas suas dúvidas, se preferrir clique no botão de whatsapp ao lado e fale diretamente conosco.
+                            Use o formulário ao lado e tire todas suas dúvidas, se preferrir clique no botão de WhatsApp ao lado e fale diretamente conosco.
                         </Typography>
                     </div>
 

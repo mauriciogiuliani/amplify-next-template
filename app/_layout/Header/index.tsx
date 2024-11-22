@@ -27,13 +27,13 @@ function NavList() {
       </a>
       <a href="#beneficios">
         <Typography className="text-primary font-bold tracking-wide m-r-4">
-          BENEFICIOS
+          BENEFÍCIOS
         </Typography>
 
       </a>
       <a href="#duvidas">
         <Typography className="text-primary font-bold tracking-wide m-r-4">
-          DUVIDAS FREQUENTES
+          DÚVIDAS FREQUENTES
         </Typography>
 
       </a>
