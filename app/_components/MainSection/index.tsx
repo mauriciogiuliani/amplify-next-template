@@ -9,8 +9,10 @@ import { generateClient } from 'aws-amplify/data';
 import { useAlert } from "@/app/_layout/AlertMessage/AlertContext";
 
 import background_img from "@/images/login_form_background_02.jpg"
-import { InformationCircleIcon } from "@heroicons/react/24/outline";
-import PDFViewer from "./Produtos";
+import { InformationCircleIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import PDFViewer from "./PDFViewer";
+import PDFViewerModal from "./PDFViewer";
+import TermoAdesaoModal from "../ProdutosSection/TermoAdesaoModal";
 
 
 // import pdfUrl from "@/c:\Users\Mauricio_Giuliani\OneDrive - Dell Technologies\Mauricio\#Personal\__SIAD\Demonstrativo_modelo CERTAJA ML2.pdf"
@@ -68,43 +70,14 @@ const MainSection: React.FC = () => {
 
     const handleOpen = () => setSaibaMais(!saibaMais);
 
+    const [termoAdesaoOpened, setTermoAdesaoOpened] = useState(false);
+
     return (
         <>
 
+        <PDFViewerModal title="Tarifa Convencional" fileUrl="demonstrativo.pdf" isOpen={saibaMais} handler={handleOpen} />
 
-            <Dialog
-                open={saibaMais}
-                size="xl"
-                handler={handleOpen}
-            >
-                <DialogHeader>
-                    Its a simple modal.
-                    <Button
-                        variant="text"
-                        color="red"
-                        onClick={() => handleOpen()}
-                        className="mr-1"
-                    >
-                        <span>Cancel</span>
-                    </Button>
-                </DialogHeader>
-                <DialogBody className="flex justify-center items-center h-[50rem] overflow-y-auto">
-
-                    <PDFViewer fileUrl="demonstrativo.pdf" />
-
-
-                </DialogBody>
-
-            </Dialog>
-
-
-            {/* {saibaMais && (
-                <div>
-                    <Button onClick={handleOpen}>Fechar</Button>
-                    <PDFViewer fileUrl="demonstrativo.pdf" />
-                </div>
-                
-            )} */}
+        <TermoAdesaoModal isOpen={termoAdesaoOpened} handler={() => setTermoAdesaoOpened(!termoAdesaoOpened)}  />
 
             {true && (
                 <section>
@@ -307,6 +280,7 @@ const MainSection: React.FC = () => {
                                         className="text-primary border-primary hover:bg-primary hover:text-white"
                                         variant="outlined"
                                         fullWidth
+                                        onClick={() => { setTermoAdesaoOpened(true) }}
                                     >
                                         Escolher Produto
                                     </Button>

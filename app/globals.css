@@ -35,6 +35,10 @@ html {
     /* Any additional styling for the form and text */
 }
 
+td {
+    padding: 0.25rem 1rem;
+}
+
 
 /* .hero-image::before {
     content: "";
