@@ -63,3 +63,9 @@ td {
         height: calc(100% - 6.25rem);
     }
 } */
+
+.rpv-core__inner-pages {
+    overflow: auto;
+    max-height: 60vh;
+    min-height: 60vh;
+}

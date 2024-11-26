@@ -40,41 +40,26 @@ const PDFViewerModal: React.FC<PDFViewerModal> = ({ title, fileUrl, isOpen, hand
                 size="xl"
                 handler={(handler)}
             >
-                <DialogHeader className="flex justify-between px-2 xl:p-6">
+                <DialogHeader className="flex justify-between px-2 pb-0 xl:p-4 text-primary">
                     {title}
 
-                    <div className='flex align-center'>
+                    <Button
+                        variant="text"
+                        onClick={(handler)}
+                        className="flex items-center gap-1  bg-white text-primary"
 
-    {/* 
-                            <Download >
-                                {(props: RenderDownloadProps) => (
-                                    <Button variant="text" className='flex items-center gap-1 text-primary'
-                                        onClick={props.onClick}
-                                    >
-                                        DOWNLOAD
-                                        <ArrowDownTrayIcon strokeWidth={2} className="h-4 w-4" />
-                                        
-                                    </Button>
-                                )}
-                            </Download> */}
+                    >
+                        <XMarkIcon strokeWidth={2} className="h-5 w-5" />
 
-                        <Button
-                            variant="text"
-                            color="red"
-                            onClick={(handler)}
-                            className="flex items-center gap-1 "
-                        >
-                            {/* FECHAR */}
-                            <XMarkIcon strokeWidth={2} className="h-5 w-5" />
-
-                        </Button>
-                    </div>
-
+                    </Button>
                 </DialogHeader>
 
-                <DialogBody className="flex  h-[50rem] overflow-y-auto">
+                {/* <DialogBody className="flex max-h-[50vh] overflow-y-auto"> */}
+                <DialogBody className="px-2 xl:p-6 xl:pt-0 min-h-[80vh] h-[80vh] ">
 
-                    <div className='flex flex-col h-5/6 lg:h-fit w-full border-2 border-gray-300'>
+
+
+                    <div className='mx-auto  w-full border-2 border-gray-300 '>
 
                         <div className='flex justify-center py-1 px-6 border-b border-gray-200 bg-gray-100'>
                             <div className='flex align-center'>
@@ -87,9 +72,19 @@ const PDFViewerModal: React.FC<PDFViewerModal> = ({ title, fileUrl, isOpen, hand
 
                         <Viewer fileUrl={fileUrl}
                             plugins={[zoomPluginInstance, getFilePluginInstance]}
-                            defaultScale={SpecialZoomLevel.PageWidth} 
-                            
-                            />
+                            defaultScale={SpecialZoomLevel.PageWidth}
+
+                        />
+                    </div>
+
+                    <div className="flex justify-center pt-6  ">
+                        <Button
+                            className="border-primary bg-primary text-white"
+                        variant="filled"
+                            onClick={handler}
+                        >
+                            Fechar
+                        </Button>
                     </div>
 
                 </DialogBody>

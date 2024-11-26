@@ -1,12 +1,16 @@
 import { XMarkIcon } from "@heroicons/react/16/solid";
 import { Button, Dialog, DialogBody, DialogFooter, DialogHeader, Radio, } from "@material-tailwind/react";
-import { FC } from "react";
+import { FC, use, useState } from "react";
 
 interface TermoAdesaoModal {
     isOpen: boolean;
     handler: () => void;
 }
 const TermoAdesaoModal: FC<TermoAdesaoModal> = ({ isOpen, handler }) => {
+    const [aceito, setAceito] = useState(false)
+
+    
+
     return (
         <Dialog
             open={isOpen}
@@ -14,7 +18,7 @@ const TermoAdesaoModal: FC<TermoAdesaoModal> = ({ isOpen, handler }) => {
             handler={(handler)}
         >
 
-            <DialogHeader className="flex justify-between px-2 xl:p-6">
+            <DialogHeader className="flex justify-between px-2 pb-0 xl:p-4 text-primary ">
                 Termo de Adesão
 
                 <Button
@@ -29,7 +33,8 @@ const TermoAdesaoModal: FC<TermoAdesaoModal> = ({ isOpen, handler }) => {
             </DialogHeader>
 
             <DialogBody className="px-2 xl:p-6 xl:pt-0 text-black">
-                <div className="mx-6 max-h-[50vh] overflow-y-scroll border border-gray-200 p-6">
+
+                <div className="mx-auto max-h-[50vh] overflow-y-scroll border border-gray-200 bg-gray-50 p-6 rounded">
                     <p className="font-bold text-center mb-4">
                         TERMO DE ADESÃO AO PRODUTO DO PROJETO EXPERIMENTAL ABERTURA DE MERCADO
                     </p>
@@ -237,9 +242,9 @@ const TermoAdesaoModal: FC<TermoAdesaoModal> = ({ isOpen, handler }) => {
                             </p>
 
 
-                            <table className="mb-2 mx-8 border text-sm " >
+                            <table className="mb-2 mx-8 border  text-sm " >
                                 <tbody >
-                                    <tr className="bg-gray-100 ">
+                                    <tr className="bg-gray-300 ">
                                         <td className="font-bold">Produto </td>
                                         <td>Tarifa de mercado /ML1 </td>
                                     </tr>
@@ -296,19 +301,64 @@ const TermoAdesaoModal: FC<TermoAdesaoModal> = ({ isOpen, handler }) => {
                     </p>
 
                     <p className="mb-2 mx-8">
-                        <span className="font-bold">Autorização: </span>Autorizo a COOPERATIVA/PERMISSIONÁRIA a lançar no documento de cobrança o efeito pela opção pelo produto acima. 
+                        <span className="font-bold">Autorização: </span>Autorizo a COOPERATIVA/PERMISSIONÁRIA a lançar no documento de cobrança o efeito pela opção pelo produto acima.
                     </p>
                     <p className="mb-2 mx-8">
                         <span className="font-bold">Rescisão: </span>O presente termo pode ser rescindido por qualquer das partes com no mínimo <span className="font-bold tex-[red]">[30]</span> dias de antecedência,
-                         respeitado as características do produto contratado conforme tabela acima.
-                          A rescisão poderá ser feita pelo próprio sistema ou mediante notificação (mensagem Whats App), 
-                          em caso de descumprimento das condições aqui estabelecidas ou por decisão unilateral ou em qualquer momento no caso de encerramento do CONTRATO DE PRESTAÇÃO DE SERVIÇO PÚBLICO DE ENERGIA ELÉTRICA PARA UNIDADES CONSUMIDORAS ATENDIDAS EM BAIXA TENSÃO da unidade consumidora.
+                        respeitado as características do produto contratado conforme tabela acima.
+                        A rescisão poderá ser feita pelo próprio sistema ou mediante notificação (mensagem Whats App),
+                        em caso de descumprimento das condições aqui estabelecidas ou por decisão unilateral ou em qualquer momento no caso de encerramento do CONTRATO DE PRESTAÇÃO DE SERVIÇO PÚBLICO DE ENERGIA ELÉTRICA PARA UNIDADES CONSUMIDORAS ATENDIDAS EM BAIXA TENSÃO da unidade consumidora.
                     </p>
 
                 </div>
+
+                <div className="mx-auto py-6 gap-4 flex flex-col items-center ">
+                    <p className="font-semibold text-primary text-center ">
+                        Você aceita participar do projeto e receber mensagens de cunho publicitário enviadas pela COOPERATIVA PERMISSIONÁRIA sobre o projeto?
+                    </p>
+
+                    <div>
+                        <Radio
+                            className=""
+                            label="ACEITO"
+                            name="type"
+                            crossOrigin={undefined}
+                            onChange={() => setAceito(true)}
+                            checked={aceito}
+                        />
+
+                        <Radio
+                            className="text-primary"
+                            label="NÃO ACEITO"
+                            name="type"
+                            crossOrigin={undefined}
+                            onChange={() => setAceito(false)}
+                            checked={!aceito}
+                        />
+                    </div>
+
+                </div>
+
+
+                <div className="flex justify-center gap-4   ">
+                    <Button
+                        className="border-primary bg-white text-primary"
+                        variant="outlined"
+                        onClick={handler}
+                    >
+                        Fechar
+                    </Button>
+                    <Button
+                        className="border-primary bg-primary text-white"
+                        variant="filled"
+                        disabled={!aceito}
+                    >
+                        ENVIAR
+                    </Button>
+                </div>
             </DialogBody>
 
-            <DialogFooter className="justify-center" >
+            {/* <DialogFooter className="justify-center" >
                 <div className="px-12">
                     <Radio
                         label="ACEITO participar do projeto e receber mensagens de cunho publicitário enviadas pela COOPERATIVA PERMISSIONÁRIA sobre o projeto. "
@@ -341,7 +391,7 @@ const TermoAdesaoModal: FC<TermoAdesaoModal> = ({ isOpen, handler }) => {
                     </Button>
                 </div>
 
-            </DialogFooter>
+            </DialogFooter> */}
         </Dialog>
     );
 };
