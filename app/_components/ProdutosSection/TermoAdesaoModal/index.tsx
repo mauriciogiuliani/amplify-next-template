@@ -14,14 +14,14 @@ const TermoAdesaoModal: FC<TermoAdesaoModal> = ({ isOpen, handler }) => {
     return (
         <Dialog
             open={isOpen}
-            size="xl"
+            size="md"
             handler={(handler)}
         >
 
-            <DialogHeader className="flex justify-between px-2 pb-0 xl:p-4 text-primary ">
+            <DialogHeader className="flex justify-center xl:p-6 text-primary ">
                 Termo de Adesão
 
-                <Button
+                {/* <Button
                     variant="text"
                     onClick={(handler)}
                     className="flex items-center gap-1  bg-white text-primary"
@@ -29,12 +29,12 @@ const TermoAdesaoModal: FC<TermoAdesaoModal> = ({ isOpen, handler }) => {
                 >
                     <XMarkIcon strokeWidth={2} className="h-5 w-5" />
 
-                </Button>
+                </Button> */}
             </DialogHeader>
 
-            <DialogBody className="px-2 xl:p-6 xl:pt-0 text-black">
+            <DialogBody className="px-4 xl:px-8 pt-0 text-black  xs:h-[75vh] text-sm xl:text-base ">
 
-                <div className="mx-auto max-h-[50vh] overflow-y-scroll border border-gray-200 bg-gray-50 p-6 rounded">
+                <div className="mx-auto max-h-[45vh] xl:max-h-[50vh] overflow-y-scroll border border-gray-200 bg-gray-50 p-2 xl:p-6 rounded text-sm xl:text-base">
                     <p className="font-bold text-center mb-4">
                         TERMO DE ADESÃO AO PRODUTO DO PROJETO EXPERIMENTAL ABERTURA DE MERCADO
                     </p>
@@ -317,9 +317,9 @@ const TermoAdesaoModal: FC<TermoAdesaoModal> = ({ isOpen, handler }) => {
                         Você aceita participar do projeto e receber mensagens de cunho publicitário enviadas pela COOPERATIVA PERMISSIONÁRIA sobre o projeto?
                     </p>
 
-                    <div>
+                    <div  className="text-sm xl:text-base">
                         <Radio
-                            className=""
+                            // className="text-sm xl:text-base"
                             label="ACEITO"
                             name="type"
                             crossOrigin={undefined}
@@ -328,7 +328,7 @@ const TermoAdesaoModal: FC<TermoAdesaoModal> = ({ isOpen, handler }) => {
                         />
 
                         <Radio
-                            className="text-primary"
+                            // className="text-primary"
                             label="NÃO ACEITO"
                             name="type"
                             crossOrigin={undefined}
@@ -340,18 +340,22 @@ const TermoAdesaoModal: FC<TermoAdesaoModal> = ({ isOpen, handler }) => {
                 </div>
 
 
-                <div className="flex justify-center gap-4   ">
+                <div className="flex justify-center gap-4 mx-4 xl:mx-32 mb-4  ">
                     <Button
-                        className="border-primary bg-white text-primary"
+                        className="border-primary bg-white text-primary  "
                         variant="outlined"
                         onClick={handler}
+                        size="sm"
+                        fullWidth
                     >
                         Fechar
                     </Button>
                     <Button
-                        className="border-primary bg-primary text-white"
+                        className="border-primary bg-primary text-white "
                         variant="filled"
                         disabled={!aceito}
+                        size="sm"
+                        fullWidth
                     >
                         ENVIAR
                     </Button>

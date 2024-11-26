@@ -37,13 +37,13 @@ const PDFViewerModal: React.FC<PDFViewerModal> = ({ title, fileUrl, isOpen, hand
         <Worker workerUrl={workerUrl}>
             <Dialog
                 open={isOpen}
-                size="xl"
+                size="md"
                 handler={(handler)}
             >
-                <DialogHeader className="flex justify-between px-2 pb-0 xl:p-4 text-primary">
+                <DialogHeader className="flex justify-center xl:p-6 text-primary ">
                     {title}
 
-                    <Button
+                    {/* <Button
                         variant="text"
                         onClick={(handler)}
                         className="flex items-center gap-1  bg-white text-primary"
@@ -51,17 +51,18 @@ const PDFViewerModal: React.FC<PDFViewerModal> = ({ title, fileUrl, isOpen, hand
                     >
                         <XMarkIcon strokeWidth={2} className="h-5 w-5" />
 
-                    </Button>
+                    </Button> */}
                 </DialogHeader>
 
                 {/* <DialogBody className="flex max-h-[50vh] overflow-y-auto"> */}
-                <DialogBody className="px-2 xl:p-6 xl:pt-0 min-h-[80vh] h-[80vh] ">
+                {/* <DialogBody className="px-2 xl:p-6 xl:pt-0 min-h-[80vh] h-[80vh] "> */}
+                <DialogBody className="px-4 xl:px-8 pt-0 text-black xs:h-[75vh] text-sm xl:text-base ">
 
 
 
-                    <div className='mx-auto  w-full border-2 border-gray-300 '>
+                    <div className='mx-auto  w-full border border-gray-200 bg-gray-50 rounded '>
 
-                        <div className='flex justify-center py-1 px-6 border-b border-gray-200 bg-gray-100'>
+                        <div className='flex justify-center py-1 px-6 rounded'>
                             <div className='flex align-center'>
                                 <ZoomOutButton />
                                 <ZoomPopover />
@@ -77,15 +78,26 @@ const PDFViewerModal: React.FC<PDFViewerModal> = ({ title, fileUrl, isOpen, hand
                         />
                     </div>
 
-                    <div className="flex justify-center pt-6  ">
+                    <div className="flex justify-center gap-4 mx-4 xl:mx-32 mb-4 pt-6 xl:pt-8  ">
                         <Button
-                            className="border-primary bg-primary text-white"
-                        variant="filled"
+                            className="border-primary bg-white text-primary  "
+                            variant="outlined"
                             onClick={handler}
+                            size="sm"
+                            fullWidth
                         >
                             Fechar
                         </Button>
+                        <Button
+                            className="border-primary bg-primary text-white "
+                            variant="filled"
+                            size="sm"
+                            fullWidth
+                        >
+                            BAIXAR
+                        </Button>
                     </div>
+
 
                 </DialogBody>
 
