@@ -78,7 +78,7 @@ const ProdutosSection: React.FC = () => {
                                     </Typography>
                                 </Typography>
                             </CardHeader>
-                            
+
                             <CardBody className="pt-0">
 
                                 <div className="flex justify-center ">
@@ -164,7 +164,7 @@ const ProdutosSection: React.FC = () => {
                                         Você paga pelo transporte da energia e pelos impostos relacionados à distribuidora de energia, que é responsável por levar a eletricidade até a sua casa.
                                     </Typography>
                                 </div>
-                                
+
                                 <Typography
                                     variant="h3"
                                     color="blue-gray"
@@ -242,6 +242,13 @@ const ProdutosSection: React.FC = () => {
 
 
                     </div>
+
+                    <p className="text-sm text-gray-600 text-center">
+                        *Valor aproximado para um consumo equivalente a 500 kWh médios mensais.
+                        <br></br>
+                        Não incluí taxas e demais encargos.
+
+                    </p>
                 </div>
             </section >
         </>

@@ -37,7 +37,7 @@ const PDFViewerModal: React.FC<PDFViewerModal> = ({ title, fileUrl, isOpen, hand
         <Worker workerUrl={workerUrl}>
             <Dialog
                 open={isOpen}
-                size="md"
+                size="lg"
                 handler={(handler)}
             >
                 <DialogHeader className="flex justify-center xl:p-6 text-primary ">

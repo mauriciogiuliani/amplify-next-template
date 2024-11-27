@@ -1,19 +1,13 @@
 "use client";
 
+import { EyeIcon, EyeSlashIcon } from "@heroicons/react/24/solid";
+import { Button, Input, Option, Select, Spinner, Typography } from "@material-tailwind/react";
 import { useState } from "react";
-import { CheckCircleIcon, EyeIcon, EyeSlashIcon, MinusCircleIcon } from "@heroicons/react/24/solid";
-import { Button, Card, CardBody, CardFooter, CardHeader, Dialog, DialogBody, DialogFooter, DialogHeader, Drawer, IconButton, Input, Option, Select, Spinner, Typography } from "@material-tailwind/react";
 
 import { type Schema } from '@/amplify/data/resource';
-import { generateClient } from 'aws-amplify/data';
 import { useAlert } from "@/app/_layout/AlertMessage/AlertContext";
+import { generateClient } from 'aws-amplify/data';
 
-import background_img from "@/images/login_form_background_02.jpg"
-import { InformationCircleIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import PDFViewer from "./PDFViewer";
-import PDFViewerModal from "./PDFViewer";
-import TermoAdesaoModal from "../ProdutosSection/TermoAdesaoModal";
-import Produtos from "@/app/produtos/page";
 import ProdutosSection from "../ProdutosSection";
 
 
@@ -72,7 +66,7 @@ const MainSection: React.FC = () => {
     return (
         <>
 
-            {grupo && <ProdutosSection />}
+            {true && <ProdutosSection />}
 
             <section
                 className="bg-[url('/images/background/main.jpg')] bg-cover  px-4 2xl:px-32 py-12 lg:py-24 ">

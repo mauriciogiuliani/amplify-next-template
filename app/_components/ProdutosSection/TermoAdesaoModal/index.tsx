@@ -14,7 +14,7 @@ const TermoAdesaoModal: FC<TermoAdesaoModal> = ({ isOpen, handler }) => {
     return (
         <Dialog
             open={isOpen}
-            size="md"
+            size="lg"
             handler={(handler)}
         >
 
@@ -341,7 +341,7 @@ const TermoAdesaoModal: FC<TermoAdesaoModal> = ({ isOpen, handler }) => {
                 </div>
 
 
-                <div className="flex justify-center gap-4 mx-4 xl:mx-32 mb-4  ">
+                <div className="flex justify-center gap-4 mx-4 xl:mx-36 mb-4  ">
                     <Button
                         className="border-primary bg-white text-primary  "
                         variant="outlined"
