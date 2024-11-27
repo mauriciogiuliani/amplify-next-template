@@ -105,7 +105,7 @@ export function NavbarSimple() {
       </Navbar>
 
 
-      <Alert className="rounded-none"
+      {/* <Alert className="rounded-none"
         variant="ghost"
         open={alertMessage ? true : false}
         onClose={() => setAlertMessage("")}
@@ -113,7 +113,7 @@ export function NavbarSimple() {
 
       >
         {alertMessage}
-      </Alert>
+      </Alert> */}
 
     </>
   );

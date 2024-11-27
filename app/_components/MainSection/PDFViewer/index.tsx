@@ -42,20 +42,8 @@ const PDFViewerModal: React.FC<PDFViewerModal> = ({ title, fileUrl, isOpen, hand
             >
                 <DialogHeader className="flex justify-center xl:p-6 text-primary ">
                     {title}
-
-                    {/* <Button
-                        variant="text"
-                        onClick={(handler)}
-                        className="flex items-center gap-1  bg-white text-primary"
-
-                    >
-                        <XMarkIcon strokeWidth={2} className="h-5 w-5" />
-
-                    </Button> */}
                 </DialogHeader>
 
-                {/* <DialogBody className="flex max-h-[50vh] overflow-y-auto"> */}
-                {/* <DialogBody className="px-2 xl:p-6 xl:pt-0 min-h-[80vh] h-[80vh] "> */}
                 <DialogBody className="px-4 xl:px-8 pt-0 text-black xs:h-[75vh] text-sm xl:text-base ">
 
 

@@ -318,6 +318,14 @@ const TermoAdesaoModal: FC<TermoAdesaoModal> = ({ isOpen, handler }) => {
                     </p>
 
                     <div  className="text-sm xl:text-base">
+                    <Radio
+                            // className="text-primary"
+                            label="NÃO ACEITO"
+                            name="type"
+                            crossOrigin={undefined}
+                            onChange={() => setAceito(false)}
+                            checked={!aceito}
+                        />
                         <Radio
                             // className="text-sm xl:text-base"
                             label="ACEITO"
@@ -327,14 +335,7 @@ const TermoAdesaoModal: FC<TermoAdesaoModal> = ({ isOpen, handler }) => {
                             checked={aceito}
                         />
 
-                        <Radio
-                            // className="text-primary"
-                            label="NÃO ACEITO"
-                            name="type"
-                            crossOrigin={undefined}
-                            onChange={() => setAceito(false)}
-                            checked={!aceito}
-                        />
+                        
                     </div>
 
                 </div>
