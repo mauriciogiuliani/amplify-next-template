@@ -4,7 +4,7 @@ import PDFViewerModal from "../MainSection/PDFViewer"
 import ProdutoCard from "./ProdutoCard"
 import TermoAdesaoModal from "./TermoAdesaoModal"
 import { grupos_produtos_map, lista_produtos } from "./constants"
-import { ChartBarSquareIcon, DocumentMagnifyingGlassIcon, WalletIcon } from "@heroicons/react/24/outline"
+import { ChartBarSquareIcon, DocumentMagnifyingGlassIcon, InformationCircleIcon, WalletIcon } from "@heroicons/react/24/outline"
 
 
 
@@ -58,7 +58,7 @@ const ProdutosSection: React.FC = () => {
                                 variant="filled"
                                 onClick={() => { setSaibaMais(true) }}
                             >
-                                <DocumentMagnifyingGlassIcon className="w-5 h-5" />
+                                <InformationCircleIcon className="w-5 h-5" />
                                 COMPARAR PRODUTOS
                             </Button>
 

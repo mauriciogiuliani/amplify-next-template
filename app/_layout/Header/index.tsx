@@ -12,7 +12,7 @@ import React, { use, useEffect, useState } from "react";
 import sipam_v2 from "@/images/logo/sipam_v2.jpg";
 
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { useAlert } from "../AlertMessage/AlertContext";
+// import { useAlert } from "../AlertMessage/AlertContext";
 
 
 
@@ -77,7 +77,7 @@ export function NavbarSimple() {
 
 
   // const [open, setOpen] = useState(false);
-  const { alertMessage, setAlertMessage } = useAlert();
+  // const { alertMessage, setAlertMessage } = useAlert();
 
 
   return (

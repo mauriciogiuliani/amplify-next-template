@@ -18,6 +18,7 @@ const schema = a.schema({
     .model({
       id: a.id(),
       numero_uc: a.string(),
+      nome: a.string(),
       chave_acesso: a.string(),
       permissionaria: a.string(),
       grupo: a.string(),

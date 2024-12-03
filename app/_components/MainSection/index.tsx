@@ -9,6 +9,7 @@ import { useAlert } from "@/app/_layout/AlertMessage/AlertContext";
 import { generateClient } from 'aws-amplify/data';
 
 import ProdutosSection from "../ProdutosSection";
+import { useAuth } from "@/app/auth.context";
 
 
 // import pdfUrl from "@/c:\Users\Mauricio_Giuliani\OneDrive - Dell Technologies\Mauricio\#Personal\__SIAD\Demonstrativo_modelo CERTAJA ML2.pdf"
@@ -22,7 +23,7 @@ const MainSection: React.FC = () => {
 
     const client = generateClient<Schema>();
 
-    const { showAlert } = useAlert();
+    // const { showAlert } = useAlert();
 
 
 
@@ -30,6 +31,7 @@ const MainSection: React.FC = () => {
 
     const [grupo, setGrupo] = useState<string>("");
 
+    const { setConsumidor } = useAuth();
 
 
     const handleFormSubmit = async (event: React.FormEvent) => {
@@ -39,9 +41,11 @@ const MainSection: React.FC = () => {
 
         // Validate form fields
         if (!numeroUC || !permissionaria || !chaveAcesso) {
-            showAlert("Preencha todos os campos!");
+            // showAlert("Preencha todos os campos!");
             return;
         }
+
+        console.log(numeroUC, permissionaria, chaveAcesso)
 
         const consumidor = await client.models.Consumidor.list({
             filter: {
@@ -53,9 +57,12 @@ const MainSection: React.FC = () => {
             }
         })
 
+        console.log(consumidor)
+
         if (consumidor.data.length > 0) {
             // showAlert("Consumidor já cadastrado!");
-            setGrupo("teste")
+            // setGrupo("teste")
+            console.log(consumidor.data[0])
         } else {
             // showAlert("Consumidor não encontrado, verifique os dados e tente novamente!");
         }

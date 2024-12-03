@@ -6,6 +6,7 @@ import { AlertProvider } from "./_layout/AlertMessage/AlertContext";
 import { SimpleFooter } from "./_layout/Footer";
 import { NavbarSimple } from "./_layout/Header";
 import { useEffect } from "react";
+import { AuthProvider } from "./auth.context";
 
 // const inter = Inter({ subsets: ["latin"] });
 
@@ -34,7 +35,8 @@ export default function RootLayout({
 
     <html lang="pt_BR">
       <body>
-        <AlertProvider>
+        <AuthProvider >
+
           <header className=" sticky top-0 bg-white opacity-100 z-10">
             <NavbarSimple />
           </header>
@@ -42,25 +44,25 @@ export default function RootLayout({
           <main className="">
             {children}
           </main>
-        </AlertProvider>
 
-        <a
-          target="_blank"
-          href={"https://api.whatsapp.com/send?phone=" + whatsappPhone + "&text=" + whatsappText}
 
-        >
-          <img src={whatsapp_icon.src} className="whatsapp_icon h-12 lg:h-14 m-6 lg:m-8 bottom-4 lg:bottom-0" />
-        </a>
+          <a
+            target="_blank"
+            href={"https://api.whatsapp.com/send?phone=" + whatsappPhone + "&text=" + whatsappText}
 
-        <footer
-          className="sticky top-0 bg-white 
+          >
+            <img src={whatsapp_icon.src} className="whatsapp_icon h-12 lg:h-14 m-6 lg:m-8 bottom-4 lg:bottom-0" />
+          </a>
+
+          <footer
+            className="sticky top-0 bg-white 
           flex flex-col lg:flex-row w-full lg:justify-evenly gap-y-2  border-t border-blue-gray-50  py-4 md:px-12 lg:py-12">
-          <SimpleFooter />
-        </footer>
+            <SimpleFooter />
+          </footer>
 
 
 
-
+        </AuthProvider>
       </body>
     </html>
 
