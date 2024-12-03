@@ -17,7 +17,7 @@ const ProdutosSection: React.FC = () => {
     return (
         <>
             <PDFViewerModal
-                title="Tarifa Convencional"
+                title="Compare os Produtos "
                 fileUrl="demonstrativo.pdf"
                 isOpen={saibaMais}
                 handler={() => setSaibaMais(!saibaMais)}
@@ -43,6 +43,17 @@ const ProdutosSection: React.FC = () => {
                         </div>
 
                         <div className="flex items-center justify-center gap-4">
+                           
+
+                            <Button
+                                className="flex justify-center items-center gap-2 text-primary border-primary"
+                                variant="outlined"
+                                onClick={() => { setSaibaMais(true) }}
+                            >
+                                <InformationCircleIcon className="w-5 h-5" />
+                                COMPARAR PRODUTOS
+                            </Button>
+
                             <Button
                                 className="flex justify-center items-center gap-2 text-white bg-primary"
                                 variant="filled"
@@ -51,15 +62,6 @@ const ProdutosSection: React.FC = () => {
                             >
                                 <WalletIcon className="w-5 h-5" />
                                 VER EXTRATO
-                            </Button>
-
-                            <Button
-                                className="flex justify-center items-center gap-2 text-white bg-primary"
-                                variant="filled"
-                                onClick={() => { setSaibaMais(true) }}
-                            >
-                                <InformationCircleIcon className="w-5 h-5" />
-                                COMPARAR PRODUTOS
                             </Button>
 
                             {/* <Button

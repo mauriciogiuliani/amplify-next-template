@@ -2,17 +2,8 @@
 import { CheckBadgeIcon, CheckCircleIcon, InformationCircleIcon, VideoCameraIcon } from "@heroicons/react/24/outline";
 import { Button, Card, CardBody, CardFooter, CardHeader, Typography } from "@material-tailwind/react";
 
-
-import { S3Client } from "@aws-sdk/client-s3";
-import { GetObjectCommand } from "@aws-sdk/client-s3";
-import { fromIni } from "@aws-sdk/credential-providers";
 import { useState } from "react";
-import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 
-const s3 = new S3Client({
-    region: "us-east-1", // e.g., "us-east-1"
-
-});
 
 
 export interface ProdutoCardProps {
@@ -24,16 +15,11 @@ export interface ProdutoCardProps {
 }
 
 const ProdutoCard: React.FC<ProdutoCardProps> = ({ title, description, price, bullets, selected }) => {
-
-    async function fetchPdf(customerId: string, pdfName: string) {
-        const command = new GetObjectCommand({
-            Bucket: "sipam",
-            Key: `1401.pdf`,
-        });
-        const response = await s3.send(command);
-
-        const signedUrl = await getSignedUrl(s3, command, { expiresIn: 3600 }); // 1-hour expiry
-        setPdfUrl(signedUrl);
+    
+    async function fetchPdf(permissionaria: string, uc: string) {
+        const response = await fetch(`/api/consumidor/detalhamento?permissionaria=${permissionaria}&uc=${uc}`);
+        const body = await response.json();
+        setPdfUrl(body.pdfUrl);
     }
 
     const [pdfUrl, setPdfUrl] = useState<string>("");
@@ -78,7 +64,7 @@ const ProdutoCard: React.FC<ProdutoCardProps> = ({ title, description, price, bu
                     <Button className="flex justify-center items-center gap-2 bg-primary "
                         size="sm"
                         variant="filled"
-                        onClick={() => fetchPdf("1", "1401.pdf")}
+                        onClick={() => fetchPdf("CERTEL", "1402")}
                     >
                         {/* <VideoCameraIcon className="h-5 min-w-5" /> */}
                         Saiba Mais

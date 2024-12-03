@@ -73,7 +73,7 @@ const MainSection: React.FC = () => {
     return (
         <>
 
-            {true && <ProdutosSection />}
+            {/* {true && <ProdutosSection />} */}
 
             <section
                 className="bg-[url('/images/background/main.jpg')] bg-cover  px-4 2xl:px-32 py-12 lg:py-24 ">

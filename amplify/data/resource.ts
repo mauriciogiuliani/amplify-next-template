@@ -25,31 +25,6 @@ const schema = a.schema({
       produto_selecionado: a.string(),
     })
     .authorization((allow) => [allow.publicApiKey()]),
-
-  Produto: a
-    .model({
-      id: a.id(),
-      nome: a.string(),
-      descricao: a.string(),
-      preco_unico: a.float(),
-      preco_patamar_pesado: a.float(),
-      preco_patamar_leve: a.float(),
-      multa: a.float(),
-      vendedor: a.string(),
-    })
-    .authorization((allow) => [allow.publicApiKey()]),
-
-  Grupo: a
-    .model({
-      id: a.id(),
-      nome: a.string(),
-      comunicacao: a.string(),
-      fidelidade: a.boolean(),
-      periodo_teste: a.boolean(),
-      vizinhanca: a.boolean(),
-      produtos: a.string()
-    })
-    .authorization((allow) => [allow.publicApiKey()]),
 });
 
 export type Schema = ClientSchema<typeof schema>;
