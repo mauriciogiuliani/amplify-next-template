@@ -44,6 +44,13 @@ function NavList() {
         </Typography>
 
       </a>
+
+      <a href="#fale_conosco">
+        <Typography className="text-red-300 font-bold tracking-wide">
+          SAIR
+        </Typography>
+
+      </a>
     </ul>
   );
 }

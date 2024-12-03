@@ -4,6 +4,7 @@ import PDFViewerModal from "../MainSection/PDFViewer"
 import ProdutoCard from "./ProdutoCard"
 import TermoAdesaoModal from "./TermoAdesaoModal"
 import { grupos_produtos_map, lista_produtos } from "./constants"
+import { ChartBarSquareIcon, DocumentMagnifyingGlassIcon, WalletIcon } from "@heroicons/react/24/outline"
 
 
 
@@ -43,20 +44,21 @@ const ProdutosSection: React.FC = () => {
 
                         <div className="flex items-center justify-center gap-4">
                             <Button
-                                className="text-white bg-primary"
+                                className="flex justify-center items-center gap-2 text-white bg-primary"
                                 variant="filled"
 
                             // onClick={() => { setTermoAdesaoOpened(true) }}
                             >
+                                <WalletIcon className="w-5 h-5" />
                                 VER EXTRATO
                             </Button>
 
                             <Button
-                                className="text-white bg-primary"
+                                className="flex justify-center items-center gap-2 text-white bg-primary"
                                 variant="filled"
-
-                            onClick={() => { setSaibaMais(true) }}
+                                onClick={() => { setSaibaMais(true) }}
                             >
+                                <DocumentMagnifyingGlassIcon className="w-5 h-5" />
                                 COMPARAR PRODUTOS
                             </Button>
 

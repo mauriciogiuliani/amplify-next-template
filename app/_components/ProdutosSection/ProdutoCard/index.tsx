@@ -1,5 +1,5 @@
 
-import { CheckCircleIcon } from "@heroicons/react/24/outline";
+import { CheckBadgeIcon, CheckCircleIcon, InformationCircleIcon, VideoCameraIcon } from "@heroicons/react/24/outline";
 import { Button, Card, CardBody, CardFooter, CardHeader, Typography } from "@material-tailwind/react";
 
 
@@ -11,7 +11,7 @@ import { getSignedUrl } from "@aws-sdk/s3-request-presigner";
 
 const s3 = new S3Client({
     region: "us-east-1", // e.g., "us-east-1"
-   
+
 });
 
 
@@ -74,6 +74,17 @@ const ProdutoCard: React.FC<ProdutoCardProps> = ({ title, description, price, bu
 
 
             <CardBody className="pt-0">
+                <div className="flex justify-center pb-4">
+                    <Button className="flex justify-center items-center gap-2 bg-primary "
+                        size="sm"
+                        variant="filled"
+                        onClick={() => fetchPdf("1", "1401.pdf")}
+                    >
+                        {/* <VideoCameraIcon className="h-5 min-w-5" /> */}
+                        Saiba Mais
+                    </Button>
+                </div>
+
 
                 <Typography
                     variant="h3"
@@ -113,32 +124,27 @@ const ProdutoCard: React.FC<ProdutoCardProps> = ({ title, description, price, bu
 
             </CardBody>
             <CardFooter className="flex justify-center gap-4">
-                <Button className="text-primary hover:bg-primary hover:text-white"
-                    size="sm" variant="outlined"
-                    //  onClick={() => setSaibaMais(true)}
 
-                    onClick={() => fetchPdf("1", "1401.pdf")}
-                >
-                    Ver Vídeo
-                </Button>
 
                 {selected ? (
                     <Button
-                        className="text-white bg-primary "
+                        className="flex justify-center items-center gap-2 text-white bg-primary "
                         variant="filled"
                         size="sm"
                         disabled
+                        fullWidth
                     >
+                        <CheckBadgeIcon className="h-5 min-w-5" />
                         Produto Atual
                     </Button>
 
                 ) : (
                     <Button
-                        // className="text-primary border-primary hover:bg-primary hover:text-white"
-                        className="text-white bg-primary"
-                        variant="filled"
+                        className="text-primary border-primary hover:bg-primary hover:text-white"
+                        // className="text-white bg-primary"
+                        variant="outlined"
                         size="sm"
-
+                        fullWidth
                     // onClick={() => { setTermoAdesaoOpened(true) }}
                     >
                         Escolher Produto
@@ -147,12 +153,12 @@ const ProdutoCard: React.FC<ProdutoCardProps> = ({ title, description, price, bu
 
             </CardFooter>
 
-            <iframe
+            {/* <iframe
                 src={pdfUrl || ""}
                 width="100%"
                 height="600px"
                 style={{ border: "none" }}
-            />
+            /> */}
         </Card>
     )
 }

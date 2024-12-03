@@ -21,7 +21,7 @@ const schema = a.schema({
       chave_acesso: a.string(),
       permissionaria: a.string(),
       grupo: a.string(),
-      sub_grupo: a.string(),
+      produto_selecionado: a.string(),
     })
     .authorization((allow) => [allow.publicApiKey()]),
 
