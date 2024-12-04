@@ -61,9 +61,9 @@ const ProdutoCard: React.FC<ProdutoCardProps> = ({ title, description, price, bu
 
             <CardBody className="pt-0">
                 <div className="flex justify-center pb-4">
-                    <Button className="flex justify-center items-center gap-2 bg-primary "
+                    <Button className="flex justify-center items-center gap-2 bg-white text-primary border-primary h-8"
                         size="sm"
-                        variant="filled"
+                        variant="outlined"
                         onClick={() => fetchPdf("CERTEL", "1402")}
                     >
                         {/* <VideoCameraIcon className="h-5 min-w-5" /> */}
@@ -114,7 +114,7 @@ const ProdutoCard: React.FC<ProdutoCardProps> = ({ title, description, price, bu
 
                 {selected ? (
                     <Button
-                        className="flex justify-center items-center gap-2 text-white bg-primary "
+                        className="flex justify-center items-center gap-2 text-primary bg-secondary "
                         variant="filled"
                         size="sm"
                         disabled
@@ -126,13 +126,14 @@ const ProdutoCard: React.FC<ProdutoCardProps> = ({ title, description, price, bu
 
                 ) : (
                     <Button
-                        className="text-primary border-primary hover:bg-primary hover:text-white"
-                        // className="text-white bg-primary"
+                        // className="text-primary  hover:bg-primary hover:text-white"
+                        className="flex justify-center items-center gap-2  text-white bg-primary border-primary"
                         variant="outlined"
                         size="sm"
                         fullWidth
                     // onClick={() => { setTermoAdesaoOpened(true) }}
                     >
+                        <CheckCircleIcon className="h-5 min-w-5" />
                         Escolher Produto
                     </Button>
                 )}

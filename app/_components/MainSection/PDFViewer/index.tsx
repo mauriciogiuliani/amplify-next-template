@@ -16,6 +16,8 @@ import { ArrowDownTrayIcon } from '@heroicons/react/24/outline';
 
 interface PDFViewerModal {
     title: string;
+
+    
     fileUrl: string;
     isOpen: boolean;
     handler: () => void;
@@ -48,7 +50,7 @@ const PDFViewerModal: React.FC<PDFViewerModal> = ({ title, fileUrl, isOpen, hand
 
 
 
-                    {/* <div tabIndex={0}  className='mx-auto  w-full border border-gray-200 bg-gray-50 rounded  '>
+                    <div tabIndex={0}  className='mx-auto  w-full border border-gray-200 bg-gray-50 rounded  '>
 
                         <div className='flex justify-center py-1 px-6 rounded'>
                             <div className='flex align-center'>
@@ -64,9 +66,9 @@ const PDFViewerModal: React.FC<PDFViewerModal> = ({ title, fileUrl, isOpen, hand
                             defaultScale={SpecialZoomLevel.PageWidth}
 
                         />
-                    </div> */}
+                    </div>
 
-                    <iframe src={fileUrl} className="w-full h-[80vh]"></iframe>
+                    {/* <iframe src={fileUrl} className="w-full h-[80vh]"></iframe> */}
 
                     <div className="flex justify-center gap-4 mx-4 xl:mx-32 mb-4 pt-6 xl:pt-8  ">
                         <Button

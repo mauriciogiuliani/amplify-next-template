@@ -19,12 +19,20 @@ Amplify.configure(outputs);
 
 export default function App() {
 
-  const { consumidor } = useAuth()
+  const { consumidor } = useAuth();
 
 
   return (
     <>
-      { consumidor.uc && <ProdutosSection /> }
+      {consumidor.uc &&
+        <ProdutosSection
+          numeroUC={consumidor.uc}
+          permissionaria={consumidor.permissionaria}
+          nome={consumidor.nome}
+          grupo={consumidor.grupo}
+          produtoSelecionado={consumidor.produto_selecionado}
+                  />
+      }
 
       <MainSection />
 

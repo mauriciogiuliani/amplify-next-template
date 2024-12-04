@@ -5,22 +5,38 @@ import ProdutoCard from "./ProdutoCard"
 import TermoAdesaoModal from "./TermoAdesaoModal"
 import { grupos_produtos_map, lista_produtos } from "./constants"
 import { ChartBarSquareIcon, DocumentMagnifyingGlassIcon, InformationCircleIcon, WalletIcon } from "@heroicons/react/24/outline"
+import { useAuth } from "@/app/auth.context"
+import DetalhamentoDialog from "./DetalhamentoDialog"
 
 
+export interface ProdutosSectionProps {
+    numeroUC: string,
+    permissionaria: string,
+    nome: string,
+    produtoSelecionado: string
+    grupo: string
+}
 
-const ProdutosSection: React.FC = () => {
+const ProdutosSection: React.FC<ProdutosSectionProps> = ({ numeroUC, permissionaria, nome, produtoSelecionado, grupo }) => {
 
+    const [detalhamentoOpened, setDetalhamentoOpened] = useState(false)
     const [termoAdesaoOpened, setTermoAdesaoOpened] = useState(false);
-    const [saibaMais, setSaibaMais] = useState<boolean>(false);
 
-    const produtos = lista_produtos.filter((produto) => grupos_produtos_map.get("E3")?.includes(produto.id))
+
+
+
+    // const produtos = lista_produtos.filter((produto) => grupos_produtos_map.get("E3")?.includes(produto.id))
+    const produtos = lista_produtos.filter((produto) => grupos_produtos_map.get(grupo)?.includes(produto.id))
+
+
     return (
         <>
-            <PDFViewerModal
-                title="Compare os Produtos "
-                fileUrl="demonstrativo.pdf"
-                isOpen={saibaMais}
-                handler={() => setSaibaMais(!saibaMais)}
+            <DetalhamentoDialog
+                numeroUC={numeroUC}
+                permissionaria={permissionaria}
+                isOpen={detalhamentoOpened}
+                handler={() => setDetalhamentoOpened(!detalhamentoOpened)}
+
             />
 
             <TermoAdesaoModal
@@ -38,20 +54,19 @@ const ProdutosSection: React.FC = () => {
                             </Typography>
 
                             <Typography variant="paragraph" className="text-gray-500 text-xl  text-center lg:text-start">
-                                PEDRO DE OLIVEIRA - CERTAJA - 36071
+                                {nome.toUpperCase()} - {permissionaria.toUpperCase()} - {numeroUC}
                             </Typography>
                         </div>
 
                         <div className="flex items-center justify-center gap-4">
-                           
 
                             <Button
                                 className="flex justify-center items-center gap-2 text-primary border-primary"
                                 variant="outlined"
-                                onClick={() => { setSaibaMais(true) }}
+                            onClick={() => { setDetalhamentoOpened(true) }}
                             >
                                 <InformationCircleIcon className="w-5 h-5" />
-                                COMPARAR PRODUTOS
+                                DETALHAMENTO
                             </Button>
 
                             <Button
@@ -86,7 +101,7 @@ const ProdutosSection: React.FC = () => {
                                         description={produto.description}
                                         price={produto.price}
                                         bullets={produto.bullets}
-                                        selected={produto.selected}
+                                        selected={produto.id == produtoSelecionado}
                                     />
                                 ))
                         }

@@ -36,7 +36,6 @@ const MainSection: React.FC = () => {
 
     const handleFormSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
-
         setLoading(true)
 
         // Validate form fields
@@ -47,27 +46,31 @@ const MainSection: React.FC = () => {
 
         console.log(numeroUC, permissionaria, chaveAcesso)
 
-        const response = await client.models.Consumidor.list();
+        const response = await client.models.Consumidor.list({
+            filter: {
+                and: [
+                    { numero_uc: { eq: numeroUC } },
+                    { chave_acesso: { eq: chaveAcesso } },
+                    { permissionaria: { eq: permissionaria } }
+                ]
+            }
+        });
 
-       
-
+        console.log(response)
         if (response.data.length > 0) {
-            // showAlert("response já cadastrado!");
-            // setGrupo("teste")
-            console.log(consumidor)
             setConsumidor({
                 uc: response.data[0].numero_uc,
-                nome: '',
-                permissionaria: '',
-                grupo: '',
-                produto_selecionado: '',
+                nome: response.data[0].nome,
+                permissionaria: response.data[0].permissionaria,
+                grupo: response.data[0].grupo,
+                produto_selecionado: response.data[0].produto_selecionado,
             })
-
-            console.log("aa", consumidor)
         } else {
+            console.error("Consumidor não encontrado!")
             // showAlert("Consumidor não encontrado, verifique os dados e tente novamente!");
         }
 
+        window.scrollTo({ top: 0, behavior: "smooth" });
         setLoading(false)
     }
 

@@ -46,13 +46,7 @@ export default function RootLayout({
           </main>
 
 
-          <a
-            target="_blank"
-            href={"https://api.whatsapp.com/send?phone=" + whatsappPhone + "&text=" + whatsappText}
 
-          >
-            <img src={whatsapp_icon.src} className="whatsapp_icon h-12 lg:h-14 m-6 lg:m-8 bottom-4 lg:bottom-0" />
-          </a>
 
           <footer
             className="sticky top-0 bg-white 
@@ -60,7 +54,13 @@ export default function RootLayout({
             <SimpleFooter />
           </footer>
 
+          <a
+            target="_blank"
+            href={"https://api.whatsapp.com/send?phone=" + whatsappPhone + "&text=" + whatsappText}
 
+          >
+            <img src={whatsapp_icon.src} className="whatsapp_icon h-12 lg:h-14 m-6 lg:m-8 bottom-4 lg:bottom-0" />
+          </a>
 
         </AuthProvider>
       </body>
