@@ -29,7 +29,7 @@ export async function GET(req: NextRequest) {
     const s3 = new S3Client({
         region: "us-east-1", // e.g., "us-east-1"
         credentials: {
-            accessKeyId: process.env.ACCESS_KEY_ID_S3 as string,
+            accessKeyId: process.env.NEXT_PUBLIC_ACCESS_KEY_ID_S3 as string,
             secretAccessKey: process.env.ACCESS_KEY_SECRET_S3 as string,
         }
     });
