@@ -30,7 +30,7 @@ export async function GET(req: NextRequest) {
         region: "us-east-1", // e.g., "us-east-1"
         credentials: {
             accessKeyId: process.env.NEXT_PUBLIC_ACCESS_KEY_ID_S3 as string,
-            secretAccessKey: process.env.ACCESS_KEY_SECRET_S3 as string,
+            secretAccessKey: process.env.NEXT_PUBLIC_ACCESS_KEY_SECRET_S3 as string,
         }
     });
 
