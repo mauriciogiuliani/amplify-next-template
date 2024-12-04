@@ -31,7 +31,7 @@ const MainSection: React.FC = () => {
 
     const [grupo, setGrupo] = useState<string>("");
 
-    const { setConsumidor } = useAuth();
+    const { setConsumidor, consumidor } = useAuth();
 
 
     const handleFormSubmit = async (event: React.FormEvent) => {
@@ -47,22 +47,23 @@ const MainSection: React.FC = () => {
 
         console.log(numeroUC, permissionaria, chaveAcesso)
 
-        const consumidor = await client.models.Consumidor.list({
-            filter: {
-                and: [
-                    { numero_uc: { eq: numeroUC } },
-                    { chave_acesso: { eq: chaveAcesso } },
-                    { permissionaria: { eq: permissionaria } }
-                ]
-            }
-        })
+        const response = await client.models.Consumidor.list();
 
-        console.log(consumidor)
+       
 
-        if (consumidor.data.length > 0) {
-            // showAlert("Consumidor já cadastrado!");
+        if (response.data.length > 0) {
+            // showAlert("response já cadastrado!");
             // setGrupo("teste")
-            console.log(consumidor.data[0])
+            console.log(consumidor)
+            setConsumidor({
+                uc: response.data[0].numero_uc,
+                nome: '',
+                permissionaria: '',
+                grupo: '',
+                produto_selecionado: '',
+            })
+
+            console.log("aa", consumidor)
         } else {
             // showAlert("Consumidor não encontrado, verifique os dados e tente novamente!");
         }

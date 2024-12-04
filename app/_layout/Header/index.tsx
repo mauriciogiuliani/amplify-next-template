@@ -12,6 +12,7 @@ import React, { use, useEffect, useState } from "react";
 import sipam_v2 from "@/images/logo/sipam_v2.jpg";
 
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { useAuth } from "@/app/auth.context";
 // import { useAlert } from "../AlertMessage/AlertContext";
 
 
@@ -59,6 +60,8 @@ function NavList() {
 
 
 export function NavbarSimple() {
+
+  const { consumidor } = useAuth()
 
 
   const [openNav, setOpenNav] = React.useState(false);

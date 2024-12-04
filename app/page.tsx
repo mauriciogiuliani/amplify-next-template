@@ -11,15 +11,21 @@ import MainSection from "./_components/MainSection";
 import DescriptionSection from "./_components/DescriptionSection";
 import CarouselSection from "./_components/CarouselSection";
 import FAQSection from "./_components/FAQSection";
+import { useAuth } from "./auth.context";
+import ProdutosSection from "./_components/ProdutosSection";
 
 Amplify.configure(outputs);
 
 
 export default function App() {
 
+  const { consumidor } = useAuth()
+
 
   return (
     <>
+      { consumidor.uc && <ProdutosSection /> }
+
       <MainSection />
 
       <DescriptionSection />
