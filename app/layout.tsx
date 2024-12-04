@@ -37,7 +37,7 @@ export default function RootLayout({
       <body>
         <AuthProvider >
 
-          <header className=" sticky top-0 bg-white opacity-100 z-10">
+          <header className=" sticky top-0 bg-white opacity-100 z-50">
             <NavbarSimple />
           </header>
 

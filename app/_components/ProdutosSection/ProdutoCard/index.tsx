@@ -1,5 +1,5 @@
 
-import { CheckBadgeIcon, CheckCircleIcon, InformationCircleIcon, VideoCameraIcon } from "@heroicons/react/24/outline";
+import { ArrowTopRightOnSquareIcon, CheckBadgeIcon, CheckCircleIcon, InformationCircleIcon, VideoCameraIcon } from "@heroicons/react/24/outline";
 import { Button, Card, CardBody, CardFooter, CardHeader, Typography } from "@material-tailwind/react";
 
 import { useState } from "react";
@@ -61,13 +61,14 @@ const ProdutoCard: React.FC<ProdutoCardProps> = ({ title, description, price, bu
 
             <CardBody className="pt-0">
                 <div className="flex justify-center pb-4">
-                    <Button className="flex justify-center items-center gap-2 bg-white text-primary border-primary h-8"
+                    <Button className="flex justify-center items-center gap-2 bg-white text-primary border-primary"
                         size="sm"
-                        variant="outlined"
+                        variant="text"
                         onClick={() => fetchPdf("CERTEL", "1402")}
                     >
                         {/* <VideoCameraIcon className="h-5 min-w-5" /> */}
                         Saiba Mais
+                        <ArrowTopRightOnSquareIcon className="h-5 min-w-5" />
                     </Button>
                 </div>
 
@@ -114,8 +115,8 @@ const ProdutoCard: React.FC<ProdutoCardProps> = ({ title, description, price, bu
 
                 {selected ? (
                     <Button
-                        className="flex justify-center items-center gap-2 text-primary bg-secondary "
-                        variant="filled"
+                        className="flex justify-center items-center gap-2 text-primary bg-secondary border-secondary "
+                        variant="outlined"
                         size="sm"
                         disabled
                         fullWidth
@@ -126,8 +127,8 @@ const ProdutoCard: React.FC<ProdutoCardProps> = ({ title, description, price, bu
 
                 ) : (
                     <Button
-                        // className="text-primary  hover:bg-primary hover:text-white"
-                        className="flex justify-center items-center gap-2  text-white bg-primary border-primary"
+                        className="flex justify-center items-center gap-2 text-primary  hover:bg-primary hover:text-white border-primary"
+                        // className="flex justify-center items-center gap-2  text-white bg-primary border-primary"
                         variant="outlined"
                         size="sm"
                         fullWidth
