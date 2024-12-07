@@ -1,12 +1,8 @@
-import { Button, Tab, TabPanel, Tabs, TabsBody, TabsHeader, Typography } from "@material-tailwind/react"
-import { useState } from "react"
-import PDFViewerModal from "../MainSection/PDFViewer"
-import ProdutoCard from "./ProdutoCard"
-import TermoAdesaoModal from "./TermoAdesaoModal"
+import { InformationCircleIcon, ShoppingBagIcon, WalletIcon } from "@heroicons/react/24/outline"
+import { Tab, TabPanel, Tabs, TabsBody, TabsHeader, Typography } from "@material-tailwind/react"
 import { grupos_produtos_map, lista_produtos } from "./constants"
-import { ChartBarSquareIcon, DocumentMagnifyingGlassIcon, InformationCircleIcon, ShoppingBagIcon, WalletIcon } from "@heroicons/react/24/outline"
-import { useAuth } from "@/app/auth.context"
-import DetalhamentoDialog from "./DetalhamentoDialog"
+import Detalhamento from "./Detalhamento"
+import ProdutoCard from "./ProdutoCard"
 
 
 export interface ProdutosSectionProps {
@@ -19,25 +15,10 @@ export interface ProdutosSectionProps {
 
 const ProdutosSection: React.FC<ProdutosSectionProps> = ({ numeroUC, permissionaria, nome, produtoSelecionado, grupo }) => {
 
-    const [detalhamentoOpened, setDetalhamentoOpened] = useState(false)
-    const [termoAdesaoOpened, setTermoAdesaoOpened] = useState(false);
-
-
-
-
-    // const produtos = lista_produtos.filter((produto) => grupos_produtos_map.get("E3")?.includes(produto.id))
     const produtos = lista_produtos.filter((produto) => grupos_produtos_map.get(grupo)?.includes(produto.id))
-
 
     return (
         <>
-
-
-            <TermoAdesaoModal
-                isOpen={termoAdesaoOpened}
-                handler={() => setTermoAdesaoOpened(!termoAdesaoOpened)} />
-
-
             <section>
                 <div className="container mx-auto py-8">
 
@@ -100,17 +81,18 @@ const ProdutosSection: React.FC<ProdutosSectionProps> = ({ numeroUC, permissiona
                                 </p>
                             </TabPanel>
                             <TabPanel key="Detalhamento" value="Detalhamento">
-                                <Typography variant="h2" className="text-3xl font-bold tracking-tighter text-primary sm:text-5xl xl:text-6xl/none text-center lg:text-start mb-2">
+                                <Typography variant="h2" className="text-3xl font-bold tracking-tighter text-primary sm:text-5xl xl:text-6xl/none text-center lg:text-start mb-4">
                                     Detalhamento
                                 </Typography>
-                                <DetalhamentoDialog
+
+                                <Detalhamento
                                     numeroUC={numeroUC}
                                     permissionaria={permissionaria}
-
+                                    
                                 />
                             </TabPanel>
                             <TabPanel key="Extrato" value="Extrato">
-                                <Typography variant="h2" className="text-3xl font-bold tracking-tighter text-primary sm:text-5xl xl:text-6xl/none text-center lg:text-start mb-2">
+                                <Typography variant="h2" className="text-3xl font-bold tracking-tighter text-primary sm:text-5xl xl:text-6xl/none text-center lg:text-start mb-4">
                                     Extrato
                                 </Typography>
                             </TabPanel>

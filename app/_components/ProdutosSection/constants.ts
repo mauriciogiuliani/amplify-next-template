@@ -1,4 +1,3 @@
-import { buffer } from "stream/consumers"
 
 export const lista_produtos = [
     {
@@ -132,3 +131,7 @@ export const grupos_produtos_map: Map<string, string[]> = new Map([
     ["E12", ["TE", "ML9"]],
     ["E13", ["TE", "ML1"]],
 ])
+
+export const whatsapp_text = encodeURIComponent("Olá, gostaria de mais informações sobre o Projeto de Adesaão ao Mercado Livre de Energia");
+export const whatsapp_number = "5551984084420";
+

@@ -17,7 +17,7 @@ import { useAuth } from "@/app/auth.context";
 
 
 
-function NavList() {
+const HeaderMenu: React.FC<{ loggedIn: boolean }> = ({ loggedIn }) => {
   return (
     <ul className="my-6 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
       <a href="#projeto">
@@ -38,20 +38,17 @@ function NavList() {
         </Typography>
 
       </a>
+      {
+        loggedIn && (
+          <a href="#fale_conosco">
+            <Typography className="text-primary font-bold tracking-wide">
+              FALE CONOSCO
+            </Typography>
 
-      <a href="#fale_conosco">
-        <Typography className="text-primary font-bold tracking-wide">
-          FALE CONOSCO
-        </Typography>
+          </a>
+        )
+      }
 
-      </a>
-
-      {/* <a href="#fale_conosco">
-        <Typography className="text-red-300 font-bold tracking-wide">
-          SAIR
-        </Typography>
-
-      </a> */}
     </ul>
   );
 }
@@ -59,7 +56,7 @@ function NavList() {
 
 
 
-export function NavbarSimple() {
+export function Header() {
 
   const { consumidor } = useAuth()
 
@@ -79,21 +76,15 @@ export function NavbarSimple() {
   }, []);
 
 
-  // const [open, setOpen] = useState(false);
-  // const { alertMessage, setAlertMessage } = useAlert();
-
-
   return (
 
     <>
-      <Navbar className=""
-        fullWidth
-      >
+      <Navbar fullWidth>
         <div className="flex items-center justify-between text-blue-gray-100 px-2 lg:px-16">
 
           <img src={sipam_v2.src} alt="" className="h-14 lg:h-18" />
           <div className="hidden lg:block">
-            <NavList />
+            <HeaderMenu loggedIn={consumidor.uc} />
           </div>
 
           <IconButton
@@ -110,7 +101,7 @@ export function NavbarSimple() {
           </IconButton>
         </div>
         <Collapse open={openNav}>
-          <NavList />
+          <HeaderMenu loggedIn={consumidor.uc} />
         </Collapse>
       </Navbar>
 

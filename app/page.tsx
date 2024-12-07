@@ -13,6 +13,9 @@ import CarouselSection from "./_components/CarouselSection";
 import FAQSection from "./_components/FAQSection";
 import { useAuth } from "./auth.context";
 import ProdutosSection from "./_components/ProdutosSection";
+import { whatsapp_number, whatsapp_text } from "./_components/ProdutosSection/constants";
+import whatsapp_icon from "@/images/whatsapp.png";
+
 
 Amplify.configure(outputs);
 
@@ -31,7 +34,7 @@ export default function App() {
           nome={consumidor.nome}
           grupo={consumidor.grupo}
           produtoSelecionado={consumidor.produto_selecionado}
-                  />
+        />
       }
 
       <MainSection />
@@ -42,7 +45,23 @@ export default function App() {
 
       <FAQSection />
 
-      <ContactSection />
+      {
+        consumidor.uc && (
+          <>
+            <ContactSection />
+            <a
+              target="_blank"
+              href={"https://api.whatsapp.com/send?phone=" + whatsapp_number + "&text=" + whatsapp_text}
+
+            >
+              <img src={whatsapp_icon.src} className="whatsapp_icon h-12 lg:h-14 m-6 lg:m-8 bottom-4 lg:bottom-0 z-50" />
+            </a>
+          </>
+        )
+      }
+
+
+
 
     </>
   );

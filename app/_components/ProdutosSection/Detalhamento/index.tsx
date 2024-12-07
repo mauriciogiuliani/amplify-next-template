@@ -5,20 +5,26 @@ import '@react-pdf-viewer/core/lib/styles/index.css';
 import '@react-pdf-viewer/default-layout/lib/styles/index.css';
 import '@react-pdf-viewer/zoom/lib/styles/index.css';
 
-import { Viewer, Worker, SpecialZoomLevel } from '@react-pdf-viewer/core';
-import { zoomPlugin } from '@react-pdf-viewer/zoom';
+import { Spinner } from '@material-tailwind/react';
+import { SpecialZoomLevel, Viewer, Worker } from '@react-pdf-viewer/core';
 import { getFilePlugin } from '@react-pdf-viewer/get-file';
+import { zoomPlugin } from '@react-pdf-viewer/zoom';
 import React, { useEffect, useState } from 'react';
-import { Button, Dialog, DialogBody, DialogHeader, Spinner } from '@material-tailwind/react';
+import { PDFWorker } from 'pdfjs-dist';
 
-interface DetalhamentoDialog {
+
+
+interface Detalhamento {
     numeroUC: string;
     permissionaria: string;
 }
 
-const DetalhamentoDialog: React.FC<DetalhamentoDialog> = ({ numeroUC, permissionaria }) => {
+const Detalhamento: React.FC<Detalhamento> = ({ numeroUC, permissionaria }) => {
 
+    const [pdfUrl, setPdfUrl] = useState("");
     const workerUrl = "https://unpkg.com/pdfjs-dist@3.4.120/build/pdf.worker.js";
+
+    // const workerUrl = PDFWorker.workerSrc;
 
     const zoomPluginInstance = zoomPlugin();
     const { ZoomInButton, ZoomOutButton, ZoomPopover } = zoomPluginInstance;
@@ -26,8 +32,6 @@ const DetalhamentoDialog: React.FC<DetalhamentoDialog> = ({ numeroUC, permission
     const getFilePluginInstance = getFilePlugin();
     const { Download } = getFilePluginInstance;
 
-
-    const [pdfUrl, setPdfUrl] = useState("");
 
     async function fetchPdf() {
         const response = await fetch(`/api/consumidor/detalhamento?permissionaria=${permissionaria}&uc=${numeroUC}`);
@@ -76,4 +80,4 @@ const DetalhamentoDialog: React.FC<DetalhamentoDialog> = ({ numeroUC, permission
     );
 };
 
-export default DetalhamentoDialog;
+export default Detalhamento;
