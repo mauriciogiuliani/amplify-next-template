@@ -50,7 +50,7 @@ const DetalhamentoDialog: React.FC<DetalhamentoDialog> = ({ numeroUC, permission
                 </div>)
                 : (
                     <>
-                        <div tabIndex={0} className='mx-auto  w-full border border-gray-200 bg-gray-50 rounded '>
+                        <div tabIndex={0} className='mx-auto w-full border border-gray-200 bg-gray-50 rounded-lg '>
                             <div className='flex justify-center pt-2 px-6 rounded '>
                                 <div className='flex align-center'>
                                     <ZoomOutButton />

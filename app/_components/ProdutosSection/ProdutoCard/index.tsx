@@ -127,9 +127,9 @@ const ProdutoCard: React.FC<ProdutoCardProps> = ({ title, description, price, bu
 
                 ) : (
                     <Button
-                        className="flex justify-center items-center gap-2 text-primary  hover:bg-primary hover:text-white border-primary"
-                        // className="flex justify-center items-center gap-2  text-white bg-primary border-primary"
-                        variant="outlined"
+                        // className="flex justify-center items-center gap-2 text-primary  hover:bg-primary hover:text-white border-primary"
+                        className="flex justify-center items-center gap-2  text-white bg-primary border-primary"
+                        variant="filled"
                         size="sm"
                         fullWidth
                     // onClick={() => { setTermoAdesaoOpened(true) }}
